@@ -1,0 +1,20 @@
+:root {
+  /* Main */
+  --primary-color: #f14b4b;
+  --secondary-color: #3c8cf0;
+  --bg-color: #1c2939;
+  --txt-color: #e7e7e4;
+
+  /* Shades */
+  --txt-color-light: #fdfdfc;
+  --txt-color-dark: #1c2939;
+  --bg-color-light: #233448;
+  --bg-color-dark: #162230;
+  --secondary-color-light: #529af1;
+  --secondary-color-dark: #2568bb;
+}
+
+* {
+  color: var(--txt-color);
+  background-color: var(--bg-color);
+}
