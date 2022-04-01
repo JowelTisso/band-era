@@ -64,7 +64,11 @@ const Footer = () => {
       <section className="footer-section">
         <p className="t4 footer-section-title">Follow Us</p>
         <div className="explore-links">
-          <a href="https://github.com/JowelTisso/band-era" target={"_blank"}>
+          <a
+            href="https://github.com/JowelTisso/band-era"
+            target={"_blank"}
+            rel="noreferrer"
+          >
             <IoLogoGithub className="t2" />
           </a>
           <IoLogoLinkedin className="t2" />
