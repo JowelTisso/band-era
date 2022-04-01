@@ -1,0 +1,29 @@
+.footer {
+  height: 30rem;
+  width: 100%;
+  background-color: #0c121a;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem 2rem;
+}
+
+.footer-section {
+  flex: 1;
+}
+
+.footer-section-title {
+  padding: 1rem 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.logo-container {
+  justify-content: flex-start;
+}
+
+.explore-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}

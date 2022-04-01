@@ -9,12 +9,20 @@
   --txt-color-light: #fdfdfc;
   --txt-color-dark: #1c2939;
   --bg-color-light: #233448;
-  --bg-color-dark: #162230;
+  --bg-color-dark: #0c121a;
   --secondary-color-light: #529af1;
   --secondary-color-dark: #2568bb;
 }
 
 * {
   color: var(--txt-color);
+}
+
+.App {
   background-color: var(--bg-color);
+}
+
+/* Utils */
+.t5 {
+  font-size: 1.2rem;
 }
