@@ -1,0 +1,44 @@
+/***********/
+/* Header */
+/* Container */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.header-middle {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-sm {
+  min-height: 3.5rem;
+  height: 3.5rem;
+  min-width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link-hover:hover {
+  background-color: var(--bg-color-light);
+  color: var(--txt-color-light);
+}
