@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/provider/AuthProvider";
 import { userLogIn, userSignUp } from "./helper/authHelper";
 import { LOG_IN, SIGN_UP } from "../../utils/Constants";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const Auth = () => {
   const [authTypeIsLogin, setAuthTypeIsLogin] = useState(true);
