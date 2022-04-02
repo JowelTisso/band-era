@@ -7,7 +7,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <AllRoutes />
+      <main className="mg-top-5x pd-top-3x">
+        <AllRoutes />
+      </main>
       <Footer />
     </div>
   );
