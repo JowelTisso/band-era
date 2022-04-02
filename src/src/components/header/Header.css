@@ -43,3 +43,12 @@
   background-color: var(--bg-color-light);
   color: var(--txt-color-light);
 }
+
+.login-icon {
+  display: none;
+}
+
+.nav-container .btn-secondary {
+  background: transparent;
+  opacity: 0.9;
+}
