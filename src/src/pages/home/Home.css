@@ -1,3 +1,12 @@
 .wrapper {
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.category-container {
+  padding: 1rem 3rem;
+}
+
+.category-card-container {
+  display: flex;
+  gap: 2rem;
 }
