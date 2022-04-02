@@ -1,0 +1,15 @@
+.category-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-card:hover {
+  opacity: 0.5;
+}
+
+.category-img {
+  height: 15rem;
+  width: 24rem;
+  object-fit: cover;
+  border-radius: 5px;
+}
