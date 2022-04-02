@@ -10,9 +10,9 @@ const Header = () => {
     <header className="header-container pd-1x pd-right-4x pd-left-4x">
       <div className="logo-container">
         <img className="logo" src={logo} alt="logo" />
-        <NavLink to={"/"} className="t3 mg-left-1x pointer logo-title no-deco">
+        <Link to={"/"} className="t3 mg-left-1x pointer logo-title no-deco">
           Band Era
-        </NavLink>
+        </Link>
       </div>
       <div className="header-middle">
         <NavLink
