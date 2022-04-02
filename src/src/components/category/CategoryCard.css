@@ -5,6 +5,7 @@
 
 .category-card:hover {
   opacity: 0.5;
+  transition: 0.4s;
 }
 
 .category-img {
