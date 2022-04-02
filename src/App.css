@@ -26,3 +26,13 @@
 .t5 {
   font-size: 1.2rem;
 }
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pointer {
+  cursor: pointer;
+}

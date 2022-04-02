@@ -18,10 +18,6 @@
   margin-bottom: 1rem;
 }
 
-.logo-container {
-  justify-content: flex-start;
-}
-
 .explore-links {
   display: flex;
   flex-wrap: wrap;
