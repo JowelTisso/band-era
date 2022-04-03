@@ -23,7 +23,7 @@ export const POST = async (url, body, newPlaylist = false) => {
         headers: { authorization: getUserToken() },
       },
       {
-       [newPlaylist ? "playlist" : "video"]: body,
+        [newPlaylist ? "playlist" : "video"]: body,
       }
     );
   } catch (err) {
@@ -31,15 +31,20 @@ export const POST = async (url, body, newPlaylist = false) => {
   }
 };
 
-export const DELETE = (url) =>{
+export const POST_AUTH = async (url, body) => {
   try {
-    return await axios.delete(
-      url,
-      {
-        headers: { authorization: getUserToken() },
-      }
-    );
+    return await axios.post(url, body);
   } catch (err) {
     console.log(err);
   }
-}
+};
+
+export const DELETE = async (url) => {
+  try {
+    return await axios.delete(url, {
+      headers: { authorization: getUserToken() },
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

@@ -2,10 +2,20 @@ import React from "react";
 import "./Header.css";
 import { IoLogOutOutline } from "react-icons/io5";
 import logo from "../../assets/logo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { activeLinkStyle } from "./HeaderStyles";
+import { useAuth } from "../../context/provider/AuthProvider";
+import { userLogout } from "../../pages/auth/helper/authHelper";
 
 const Header = () => {
+  const { authState, authDispatch } = useAuth();
+  const navigate = useNavigate();
+
+  const logoutHandler = () => {
+    userLogout(authDispatch);
+    navigate("/");
+  };
+
   return (
     <header className="header-container pd-1x pd-right-4x pd-left-4x">
       <div className="logo-container">
@@ -52,9 +62,11 @@ const Header = () => {
         </NavLink>
       </div>
       <nav className="nav-container">
-        {/* Condition to be changed later */}
-        {false ? (
-          <button className="btn btn-secondary btn-sm no-deco btn-login">
+        {authState.loggedIn ? (
+          <button
+            className="btn btn-secondary btn-sm no-deco btn-login"
+            onClick={logoutHandler}
+          >
             Logout
           </button>
         ) : (
@@ -66,8 +78,7 @@ const Header = () => {
           </Link>
         )}
 
-        {/* Condition to be changed later */}
-        {false && (
+        {authState.loggedIn && (
           <div className="pointer login-icon">
             <IoLogOutOutline className="ic-normal" />
           </div>
