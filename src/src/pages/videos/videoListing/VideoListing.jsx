@@ -14,21 +14,6 @@ const VideoListing = () => {
     videoDispatch,
   } = useVideo();
 
-  const getVideos = async (selectedGenre) => {
-    try {
-      const { status, data } = await GET(VIDEOS_API);
-      if (status === 201 || 200) {
-        if (selectedGenre) {
-          filterByGenre(selectedGenre, data.videos);
-        } else {
-          setVideos(data.videos);
-        }
-      }
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
   const filterByGenre = (genre, videoList) => {
     const filteredData = videoList.filter(
       (item) => item.genre.toLowerCase() === genre.toLowerCase()
@@ -41,7 +26,20 @@ const VideoListing = () => {
   };
 
   useEffect(() => {
-    getVideos(selectedGenre);
+    (async () => {
+      try {
+        const { status, data } = await GET(VIDEOS_API);
+        if (status === 201 || 200) {
+          if (selectedGenre) {
+            filterByGenre(selectedGenre, data.videos);
+          } else {
+            setVideos(data.videos);
+          }
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    })();
   }, [selectedGenre]);
 
   return (
@@ -59,13 +57,12 @@ const VideoListing = () => {
       </div>
       <main className="videos-container">
         {videos.map(({ _id, videoId, title, thumbnail, artist }) => (
-          <Link to={`/videoplayer/${videoId}`}>
+          <Link to={`/videoplayer/${videoId}`} key={_id}>
             <VideoCard
               img={thumbnail}
               title={title}
               artist={artist}
               views={"40M"}
-              key={_id}
             />
           </Link>
         ))}
