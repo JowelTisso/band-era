@@ -14,7 +14,7 @@ const VideoListing = () => {
     videoDispatch,
   } = useVideo();
 
-  const getVideos = async () => {
+  const getVideos = async (selectedGenre) => {
     try {
       const { status, data } = await GET(VIDEOS_API);
       if (status === 201 || 200) {
@@ -41,7 +41,7 @@ const VideoListing = () => {
   };
 
   useEffect(() => {
-    getVideos();
+    getVideos(selectedGenre);
   }, [selectedGenre]);
 
   return (
