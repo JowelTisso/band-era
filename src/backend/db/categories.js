@@ -11,7 +11,7 @@ const _90s_Song = {
   subCategoryList: [
     {
       _id: uuid(),
-      subCategoryName: "Electronic music",
+      subCategoryName: "Electronic",
       subCategoryImg:
         "https://i.ytimg.com/vi/51iquRYKPbs/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLAZDcEALdMvcUKtuPCIhuWsL3E8vQ",
     },

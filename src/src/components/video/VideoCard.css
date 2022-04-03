@@ -1,0 +1,26 @@
+.video-card {
+  display: flex;
+  flex-direction: column;
+  width: 24rem;
+}
+
+.video-card:hover {
+  opacity: 0.5;
+  transition: 0.4s;
+}
+
+.video-thumb {
+  height: 15rem;
+  width: 24rem;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.video-title {
+  line-height: 2rem;
+}
+
+.video-info-container {
+  display: flex;
+  justify-content: space-between;
+}

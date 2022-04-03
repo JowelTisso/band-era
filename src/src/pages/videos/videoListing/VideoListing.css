@@ -1,0 +1,26 @@
+.video-listing-wrapper {
+  min-height: 100vh;
+  padding: 1rem 3rem;
+}
+
+.videos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  padding-left: 8rem;
+  padding-bottom: 5rem;
+}
+
+.video-genre {
+  border-left: 3px solid var(--secondary-color);
+  padding-left: 1rem;
+}
+
+.video-listing-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-all-videos:hover {
+  border-right: 3px solid var(--secondary-color);
+}

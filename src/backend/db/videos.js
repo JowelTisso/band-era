@@ -3,9 +3,12 @@
  * You can add videos of your wish with different attributes
  * */
 
+import { v4 as uuid } from "uuid";
+
 const punkRock = [
   {
-    _id: "Soa3gO7tL-c",
+    _id: uuid(),
+    videoId: "Soa3gO7tL-c",
     title: "Green Day - Boulevard Of Broken Dreams",
     artist: "Green Day",
     genre: "Punk Rock",
@@ -15,7 +18,8 @@ const punkRock = [
       "Watch the official music video for Boulevard Of Broken Dreams by Green Day from the album American Idiot.",
   },
   {
-    _id: "r00ikilDxW4",
+    _id: uuid(),
+    videoId: "r00ikilDxW4",
     title: "Green Day - 21 Guns",
     artist: "Green Day",
     genre: "Punk Rock",
@@ -25,7 +29,8 @@ const punkRock = [
       "Watch the official music video for 21 Guns by Green Day from the album 21st Century Breakdown.",
   },
   {
-    _id: "NU9JoFKlaZ0",
+    _id: uuid(),
+    videoId: "NU9JoFKlaZ0",
     title: "Green Day - Wake Me Up When September Ends",
     artist: "Green Day",
     genre: "Punk Rock",
@@ -35,7 +40,8 @@ const punkRock = [
       "Watch the official music video for Wake Me Up When September Ends by Green Day from the album American Idiot.",
   },
   {
-    _id: "By7ctqcWxyM",
+    _id: uuid(),
+    videoId: "By7ctqcWxyM",
     title: "Sum 41 - Pieces",
     artist: "Sum 41",
     genre: "Punk Rock",
@@ -45,7 +51,8 @@ const punkRock = [
       "Music video by Sum 41 performing Pieces. (C) 2004 The Island Def Jam Music Group",
   },
   {
-    _id: "g8z-qP34-1Y",
+    _id: uuid(),
+    videoId: "g8z-qP34-1Y",
     title: "Sum 41 - With Me",
     artist: "Sum 41",
     genre: "Punk Rock",
@@ -58,7 +65,8 @@ const punkRock = [
 
 const metal = [
   {
-    _id: "A7ry4cx6HfY",
+    _id: uuid(),
+    videoId: "A7ry4cx6HfY",
     title: "Avenged Sevenfold - So Far Away",
     artist: "Avenged Sevenfold",
     genre: "Metal",
@@ -68,7 +76,8 @@ const metal = [
       "Watch the official music video for So Far Away by Avenged Sevenfold from the album Nightmare.",
   },
   {
-    _id: "mzX0rhF8buo",
+    _id: uuid(),
+    videoId: "mzX0rhF8buo",
     title: "Avenged Sevenfold - Dear God",
     artist: "Avenged Sevenfold",
     genre: "Metal",
@@ -78,7 +87,8 @@ const metal = [
       "Watch the official music video for Dear God by Avenged Sevenfold from the album Avenged Sevenfold.",
   },
   {
-    _id: "DelhLppPSxY",
+    _id: uuid(),
+    videoId: "DelhLppPSxY",
     title: "Avenged Sevenfold - Hail To The King",
     artist: "Avenged Sevenfold",
     genre: "Metal",
@@ -88,7 +98,8 @@ const metal = [
       "Watch the official music video for Hail To The King by Avenged Sevenfold from the album Hail To The King",
   },
   {
-    _id: "WM8bTdBs-cw",
+    _id: uuid(),
+    videoId: "WM8bTdBs-cw",
     title: "Metallica: One",
     artist: "Metallica",
     genre: "Metal",
@@ -98,7 +109,8 @@ const metal = [
       "Metallica's official music video for “One,” from the album “...And Justice for All.",
   },
   {
-    _id: "dkNfNR1WYMY",
+    _id: uuid(),
+    videoId: "dkNfNR1WYMY",
     title: "Metallica - The Day That Never Comes",
     artist: "Metallica",
     genre: "Metal",
@@ -111,7 +123,8 @@ const metal = [
 
 const pop = [
   {
-    _id: "09R8_2nJtjg",
+    _id: uuid(),
+    videoId: "09R8_2nJtjg",
     title: "Maroon 5 - Sugar",
     artist: "Maroon 5",
     genre: "Pop",
@@ -121,7 +134,8 @@ const pop = [
       "Music video by Maroon 5 performing Sugar. (C) 2015 Interscope Records",
   },
   {
-    _id: "hT_nvWreIhg",
+    _id: uuid(),
+    videoId: "hT_nvWreIhg",
     title: "OneRepublic - Counting Stars",
     artist: "OneRepublic",
     genre: "Pop",
@@ -131,7 +145,8 @@ const pop = [
       "Music video by OneRepublic performing Counting Stars. (C) 2013 Mosley Music/Interscope Records",
   },
   {
-    _id: "QJO3ROT-A4E",
+    _id: uuid(),
+    videoId: "QJO3ROT-A4E",
     title: "One Direction - What Makes You Beautiful",
     artist: "One Direction",
     genre: "Pop",
@@ -140,7 +155,8 @@ const pop = [
     description: "Check out One Direction’s 10 Year Anniversary website",
   },
   {
-    _id: "Jwgf3wmiA04",
+    _id: uuid(),
+    videoId: "Jwgf3wmiA04",
     title: "One Direction - Drag Me Down",
     artist: "One Direction",
     genre: "Pop",
@@ -149,7 +165,8 @@ const pop = [
     description: "Check out One Direction’s 10 Year Anniversary website",
   },
   {
-    _id: "Z9pWgjSLLag",
+    _id: uuid(),
+    videoId: "Z9pWgjSLLag",
     title: "Hot Chelle Rae - Hung Up",
     artist: "Hot Chelle Rae",
     genre: "Pop",
@@ -162,7 +179,8 @@ const pop = [
 
 const rock = [
   {
-    _id: "pAgnJDJN4VA",
+    _id: uuid(),
+    videoId: "pAgnJDJN4VA",
     title: "AC/DC - Back In Black",
     artist: "AC/DC",
     genre: "Rock",
@@ -171,7 +189,8 @@ const rock = [
     description: "Official 4K Video for Back In Black by AC/DC",
   },
   {
-    _id: "l482T0yNkeo",
+    _id: uuid(),
+    videoId: "l482T0yNkeo",
     title: "AC/DC - Highway to Hell",
     artist: "AC/DC",
     genre: "Rock",
@@ -180,7 +199,8 @@ const rock = [
     description: "Official 4K Video for Highway to Hell by AC/DC",
   },
   {
-    _id: "Lo2qQmj0_h4",
+    _id: uuid(),
+    videoId: "Lo2qQmj0_h4",
     title: "AC/DC - You Shook Me All Night Long",
     artist: "AC/DC",
     genre: "Rock",
@@ -189,7 +209,8 @@ const rock = [
     description: "Official 4K Video for You Shook Me All Night Long by AC/DC",
   },
   {
-    _id: "1w7OgIMMRc4",
+    _id: uuid(),
+    videoId: "1w7OgIMMRc4",
     title: "Guns N' Roses - Sweet Child O' Mine",
     artist: "Guns N' Roses",
     genre: "Rock",
@@ -198,7 +219,8 @@ const rock = [
     description: "REMASTERED IN HD! OVER A BILLION VIEWS!",
   },
   {
-    _id: "YlUKcNNmywk",
+    _id: uuid(),
+    videoId: "YlUKcNNmywk",
     title: "Red Hot Chili Peppers - Californication",
     artist: "Red Hot Chili Peppers",
     genre: "Rock",
@@ -211,30 +233,33 @@ const rock = [
 
 const electronic = [
   {
-    _id: "yZIummTz9mM",
+    _id: uuid(),
+    videoId: "yZIummTz9mM",
     title: "Linkin Park - Leave Out All The Rest",
     artist: "Linkin Park",
-    genre: "Rock",
+    genre: "Electronic",
     thumbnail:
       "https://i.ytimg.com/vi/yZIummTz9mM/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA6O44RNIsRKMOCahE1Ql_mA-XJ5A",
     description:
       "Watch the official music video for Leave Out All The Rest by Linkin Park from the album Minutes to Midnight.",
   },
   {
-    _id: "5qF_qbaWt3Q",
+    _id: uuid(),
+    videoId: "5qF_qbaWt3Q",
     title: "Linkin Park - Waiting For The End",
     artist: "Linkin Park",
-    genre: "Rock",
+    genre: "Electronic",
     thumbnail:
       "https://i.ytimg.com/vi/5qF_qbaWt3Q/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDueUF7WdPsm8KfjwOcBBnj7Bly9g",
     description:
       "Watch the official music video for Waiting For The End by Linkin Park from the album A Thousand Suns.",
   },
   {
-    _id: "ysSxxIqKNN0",
+    _id: uuid(),
+    videoId: "ysSxxIqKNN0",
     title: "Linkin Park - New Divide",
     artist: "Linkin Park",
-    genre: "Rock",
+    genre: "Electronic",
     thumbnail:
       "https://i.ytimg.com/vi/ysSxxIqKNN0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCfn1WTrhd1n83l7fbRM8xunzPdqw",
     description:
@@ -244,7 +269,8 @@ const electronic = [
 
 const alternativeRock = [
   {
-    _id: "Lo2qQmj0_h4",
+    _id: uuid(),
+    videoId: "Lo2qQmj0_h4",
     title: "AC/DC - You Shook Me All Night Long",
     artist: "AC/DC",
     genre: "Alternative Rock",
@@ -253,7 +279,8 @@ const alternativeRock = [
     description: "Official 4K Video for You Shook Me All Night Long by AC/DC",
   },
   {
-    _id: "1w7OgIMMRc4",
+    _id: uuid(),
+    videoId: "1w7OgIMMRc4",
     title: "Guns N' Roses - Sweet Child O' Mine",
     artist: "Guns N' Roses",
     genre: "Alternative Rock",
@@ -262,7 +289,8 @@ const alternativeRock = [
     description: "REMASTERED IN HD! OVER A BILLION VIEWS!",
   },
   {
-    _id: "YlUKcNNmywk",
+    _id: uuid(),
+    videoId: "YlUKcNNmywk",
     title: "Red Hot Chili Peppers - Californication",
     artist: "Red Hot Chili Peppers",
     genre: "Alternative Rock",
@@ -275,30 +303,33 @@ const alternativeRock = [
 
 const alternativeMetal = [
   {
-    _id: "DelhLppPSxY",
+    _id: uuid(),
+    videoId: "DelhLppPSxY",
     title: "Avenged Sevenfold - Hail To The King",
     artist: "Avenged Sevenfold",
-    genre: "Metal",
+    genre: "Alternative Metal",
     thumbnail:
       "https://i.ytimg.com/vi/DelhLppPSxY/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB3hur0ID5yZj5syYtZAiBmAdZuzg",
     description:
       "Watch the official music video for Hail To The King by Avenged Sevenfold from the album Hail To The King",
   },
   {
-    _id: "WM8bTdBs-cw",
+    _id: uuid(),
+    videoId: "WM8bTdBs-cw",
     title: "Metallica: One",
     artist: "Metallica",
-    genre: "Metal",
+    genre: "Alternative Metal",
     thumbnail:
       "https://i.ytimg.com/vi/WM8bTdBs-cw/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBE8nkoTBGx6D6VW9iM1YS5-Fz8JQ",
     description:
       "Metallica's official music video for “One,” from the album “...And Justice for All.",
   },
   {
-    _id: "dkNfNR1WYMY",
+    _id: uuid(),
+    videoId: "dkNfNR1WYMY",
     title: "Metallica - The Day That Never Comes",
     artist: "Metallica",
-    genre: "Metal",
+    genre: "Alternative Metal",
     thumbnail:
       "https://i.ytimg.com/vi/K6AJuRK2NE4/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAWbpwQnhO1rXh0LUo1U1HjkTXF3Q",
     description:

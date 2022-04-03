@@ -7,6 +7,7 @@ import {
   WatchLater,
   History,
   Auth,
+  VideoPlayer,
 } from "../pages";
 
 const AllRoutes = () => {
@@ -14,6 +15,7 @@ const AllRoutes = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/videos" element={<VideoListing />} />
+      <Route path="/videoplayer/:videoId" element={<VideoPlayer />} />
       <Route path="/playlist" element={<Playlist />} />
       <Route path="/watchlater" element={<WatchLater />} />
       <Route path="/history" element={<History />} />

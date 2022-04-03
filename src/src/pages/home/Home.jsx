@@ -1,21 +1,29 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Carousel from "../../components/carousel/Carousel";
 import CategoryCard from "../../components/category/CategoryCard";
+import { useVideo } from "../../context/provider/VideoProvider";
+import { GET } from "../../utils/axiosHelper";
+import { CHANGE_GENRE } from "../../utils/Constants";
 import "./Home.css";
 
 const Home = () => {
   const [categories, setCategories] = useState([]);
 
+  const { videoDispatch } = useVideo();
+
+  const navigate = useNavigate();
+
   const getCategories = async () => {
-    try {
-      const { status, data } = await axios.get("/api/categories");
-      if (status === 200 || 201) {
-        setCategories(data.categories);
-      }
-    } catch (err) {
-      console.log(err);
+    const { status = 0, data = {} } = await GET("/api/categories");
+    if (status === 200 || 201) {
+      setCategories(data.categories);
     }
+  };
+
+  const navigateTo = (genre) => {
+    videoDispatch({ type: CHANGE_GENRE, payload: genre });
+    navigate("/videos");
   };
 
   useEffect(() => {
@@ -30,11 +38,12 @@ const Home = () => {
           <p className="t3">{categoryName}</p>
           <div className="category-card-container">
             {subCategoryList.map(({ _id, subCategoryName, subCategoryImg }) => (
-              <CategoryCard
-                key={_id}
-                categoryName={subCategoryName}
-                img={subCategoryImg}
-              />
+              <div key={_id} onClick={() => navigateTo(subCategoryName)}>
+                <CategoryCard
+                  categoryName={subCategoryName}
+                  img={subCategoryImg}
+                />
+              </div>
             ))}
           </div>
         </div>

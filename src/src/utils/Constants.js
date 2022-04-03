@@ -13,3 +13,6 @@ export const LIKES_API = "/api/user/likes";
 export const WATCHLATER_API = "/api/user/watchlater";
 export const PLAYLIST_API = "/api/user/playlists";
 export const HISTORY_API = "/api/user/history";
+
+// Video
+export const CHANGE_GENRE = "CHANGE_GENRE";
