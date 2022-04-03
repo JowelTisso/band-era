@@ -57,7 +57,7 @@ const VideoListing = () => {
       </div>
       <main className="videos-container">
         {videos.map(({ _id, videoId, title, thumbnail, artist }) => (
-          <Link to={`/videoplayer/${videoId}`} key={_id}>
+          <Link to={`/videoplayer/${videoId}`} key={_id} className="no-deco">
             <VideoCard
               img={thumbnail}
               title={title}
