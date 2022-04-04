@@ -30,13 +30,16 @@ const VideoListing = () => {
             });
           }
         }
-        // Work around for window auto scrolling to bottom
-        window.scrollTo(0, 0);
       } catch (err) {
         console.error(err);
       }
     })();
   }, [selectedGenre, videoState, videoDispatch]);
+
+  useEffect(() => {
+    // Work around for window auto scrolling to bottom
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="video-listing-wrapper pd-1x">

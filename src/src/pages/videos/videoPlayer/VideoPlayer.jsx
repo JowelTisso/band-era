@@ -1,16 +1,53 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useVideo } from "../../../context/provider/VideoProvider";
 import "./VideoPlayer.css";
-import { BiLike, BiDislike } from "react-icons/bi";
+import { MdThumbUp, MdOutlineThumbUpOffAlt } from "react-icons/md";
 import VideoCard from "./components/VideoCard";
+import { DELETE, POST } from "../../../utils/axiosHelper";
+import { LIKES_API, UPDATE_LIKED_VIDEOS } from "../../../utils/Constants";
+import { useAuth } from "../../../context/provider/AuthProvider";
 
 const VideoPlayer = () => {
   const { videoId } = useParams();
-  const { videoState } = useVideo();
+  const { videoState, videoDispatch } = useVideo();
   const [selectedVideo, setSelectedVideo] = useState({});
 
   const { videos } = videoState;
+  const { authState } = useAuth();
+  const navigate = useNavigate();
+
+  const addLikeToVideo = async () => {
+    if (authState.loggedIn) {
+      const res = await POST(LIKES_API, selectedVideo);
+      if (res?.status === 200 || 201) {
+        videoDispatch({
+          type: UPDATE_LIKED_VIDEOS,
+          payload: { likedVideos: res?.data.likes },
+        });
+      }
+    } else {
+      navigate("/auth");
+    }
+  };
+
+  const removeLikeFromVideo = async () => {
+    if (authState.loggedIn) {
+      const res = await DELETE(`${LIKES_API}/${selectedVideo._id}`);
+      if (res?.status === 200 || 201) {
+        videoDispatch({
+          type: UPDATE_LIKED_VIDEOS,
+          payload: { likedVideos: res?.data.likes },
+        });
+      }
+    } else {
+      navigate("/auth");
+    }
+  };
+
+  const isLiked = videoState.likedVideos.some(
+    (item) => item.videoId === selectedVideo.videoId
+  );
 
   useEffect(() => {
     (() => {
@@ -45,8 +82,15 @@ const VideoPlayer = () => {
               <p className="t4 pd-left-1x fw-1x">{selectedVideo.created}</p>
             </div>
             <div className="video-user-action flex">
-              <BiLike className="t3 pointer" />
-              <BiDislike className="t3 pointer" />
+              {isLiked ? (
+                <div onClick={removeLikeFromVideo}>
+                  <MdThumbUp className="t3 pointer" />
+                </div>
+              ) : (
+                <div onClick={addLikeToVideo}>
+                  <MdOutlineThumbUpOffAlt className="t3 pointer" />
+                </div>
+              )}
               <p className="t4 fw-1x pointer">Watch Later</p>
               <p className="t4 fw-1x pointer">Add to Playlist</p>
             </div>
