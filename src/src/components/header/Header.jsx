@@ -6,18 +6,25 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { activeLinkStyle } from "./HeaderStyles";
 import { useAuth } from "../../context/provider/AuthProvider";
 import { userLogout } from "../../pages/auth/helper/authHelper";
+import { useVideo } from "../../context/provider/VideoProvider";
+import { CHANGE_GENRE } from "../../utils/Constants";
 
 const Header = () => {
   const { authState, authDispatch } = useAuth();
   const navigate = useNavigate();
+  const { videoDispatch } = useVideo();
 
   const logoutHandler = () => {
     userLogout(authDispatch);
     navigate("/");
   };
 
+  const clearSelectedGenre = () => {
+    videoDispatch({ type: CHANGE_GENRE, payload: "" });
+  };
+
   return (
-    <header className="header-container pd-1x pd-right-4x pd-left-4x">
+    <header className="header-container pd-1x pd-right-3x pd-left-2x">
       <div className="logo-container">
         <img className="logo" src={logo} alt="logo" />
         <Link to={"/"} className="t3 mg-left-1x pointer logo-title no-deco">
@@ -37,7 +44,7 @@ const Header = () => {
           className="btn-link nav-link-hover btn-sm no-deco mg-right-2x"
           style={activeLinkStyle}
         >
-          Videos
+          <div onClick={clearSelectedGenre}>Videos</div>
         </NavLink>
         <NavLink
           to={"/watchlater"}

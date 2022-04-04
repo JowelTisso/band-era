@@ -1,5 +1,6 @@
 export { Home } from "./home/Home";
-export { VideoListing } from "./videos/VideoListing";
+export { VideoListing } from "./videos/videoListing/VideoListing";
+export { VideoPlayer } from "./videos/videoPlayer/VideoPlayer";
 export { Playlist } from "./playlist/Playlist";
 export { WatchLater } from "./watchlater/WatchLater";
 export { History } from "./history/History";
