@@ -17,3 +17,7 @@ export const HISTORY_API = "/api/user/history";
 // Video
 export const CHANGE_GENRE = "CHANGE_GENRE";
 export const UPDATE_VIDEO_LIST = "UPDATE_VIDEO_LIST";
+export const UPDATE_LIKED_VIDEOS = "UPDATE_LIKED_VIDEO_LIST";
+export const UPDATE_WATCH_LATER = "UPDATE_WATCH_LATER_LIST";
+export const UPDATE_PLAYLIST = "UPDATE_PLAYLIST";
+export const UPDATE_HISTORY = "UPDATE_HISTORY";

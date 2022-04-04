@@ -7,6 +7,10 @@ const VideoProvider = ({ children }) => {
   const defaultData = {
     selectedGenre: "",
     videos: [],
+    likedVideos: [],
+    watchLater: [],
+    playlist: [],
+    history: [],
   };
   const [state, dispatch] = useReducer(reducer, defaultData);
 

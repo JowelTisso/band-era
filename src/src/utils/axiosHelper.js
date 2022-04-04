@@ -20,10 +20,10 @@ export const POST = async (url, body, newPlaylist = false) => {
     return await axios.post(
       url,
       {
-        headers: { authorization: getUserToken() },
+        [newPlaylist ? "playlist" : "video"]: body,
       },
       {
-        [newPlaylist ? "playlist" : "video"]: body,
+        headers: { authorization: getUserToken() },
       }
     );
   } catch (err) {
