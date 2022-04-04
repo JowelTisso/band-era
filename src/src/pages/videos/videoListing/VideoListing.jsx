@@ -1,28 +1,35 @@
 import "./VideoListing.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { GET } from "../../../utils/axiosHelper";
-import { CHANGE_GENRE, VIDEOS_API } from "../../../utils/Constants";
+import {
+  CHANGE_GENRE,
+  UPDATE_VIDEO_LIST,
+  VIDEOS_API,
+} from "../../../utils/Constants";
 import VideoCard from "../../../components/video/VideoCard";
 import { useVideo } from "../../../context/provider/VideoProvider";
 import { Link } from "react-router-dom";
 
 const VideoListing = () => {
-  const [videos, setVideos] = useState([]);
+  const { videoState, videoDispatch } = useVideo();
 
-  const {
-    videoState: { selectedGenre },
-    videoDispatch,
-  } = useVideo();
+  const { selectedGenre } = videoState;
 
   const filterByGenre = (genre, videoList) => {
     const filteredData = videoList.filter(
       (item) => item.genre.toLowerCase() === genre.toLowerCase()
     );
-    setVideos(filteredData);
+    videoDispatch({
+      type: UPDATE_VIDEO_LIST,
+      payload: { ...videoState, videos: filteredData },
+    });
   };
 
   const clearSelectedGenre = () => {
-    videoDispatch({ type: CHANGE_GENRE, payload: "" });
+    videoDispatch({
+      type: CHANGE_GENRE,
+      payload: { ...videoState, selectedGenre: "" },
+    });
   };
 
   useEffect(() => {
@@ -33,9 +40,14 @@ const VideoListing = () => {
           if (selectedGenre) {
             filterByGenre(selectedGenre, data.videos);
           } else {
-            setVideos(data.videos);
+            videoDispatch({
+              type: UPDATE_VIDEO_LIST,
+              payload: { ...videoState, videos: data.videos },
+            });
           }
         }
+        // Work around for window auto scrolling to bottom
+        window.scrollTo(0, 0);
       } catch (err) {
         console.error(err);
       }
@@ -56,7 +68,7 @@ const VideoListing = () => {
         </button>
       </div>
       <main className="videos-container">
-        {videos.map((data) => (
+        {videoState.videos.map((data) => (
           <Link
             to={`/videoplayer/${data.videoId}`}
             key={data._id}

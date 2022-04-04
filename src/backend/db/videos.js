@@ -359,7 +359,7 @@ const alternativeMetal = [
     videoId: "DelhLppPSxY",
     title: "Avenged Sevenfold - Hail To The King",
     artist: "Avenged Sevenfold",
-    genre: "Metal",
+    genre: "Alternative Metal",
     views: "212M",
     created: "8 years ago",
     thumbnail:
@@ -372,7 +372,7 @@ const alternativeMetal = [
     videoId: "WM8bTdBs-cw",
     title: "Metallica: One",
     artist: "Metallica",
-    genre: "Metal",
+    genre: "Alternative Metal",
     views: "248M",
     created: "12 years ago",
     thumbnail:
@@ -385,7 +385,7 @@ const alternativeMetal = [
     videoId: "dkNfNR1WYMY",
     title: "Metallica - The Day That Never Comes",
     artist: "Metallica",
-    genre: "Metal",
+    genre: "Alternative Metal",
     views: "63M",
     created: "12 years ago",
     thumbnail:
