@@ -10,7 +10,7 @@ import "./Home.css";
 const Home = () => {
   const [categories, setCategories] = useState([]);
 
-  const { videoDispatch } = useVideo();
+  const { videoState, videoDispatch } = useVideo();
 
   const navigate = useNavigate();
 
@@ -22,7 +22,10 @@ const Home = () => {
   };
 
   const navigateTo = (genre) => {
-    videoDispatch({ type: CHANGE_GENRE, payload: genre });
+    videoDispatch({
+      type: CHANGE_GENRE,
+      payload: { ...videoState, selectedGenre: genre },
+    });
     navigate("/videos");
   };
 

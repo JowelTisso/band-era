@@ -6,6 +6,7 @@ const VideoContext = createContext({ state: {}, dispatch: () => {} });
 const VideoProvider = ({ children }) => {
   const defaultData = {
     selectedGenre: "",
+    videos: [],
   };
   const [state, dispatch] = useReducer(reducer, defaultData);
 
