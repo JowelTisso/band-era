@@ -21,7 +21,7 @@ const VideoPlayer = () => {
         setSelectedVideo(video);
       }
     })();
-  }, []);
+  }, [videoId, videoState]);
 
   return (
     <div className="videoplayer-wrapper">

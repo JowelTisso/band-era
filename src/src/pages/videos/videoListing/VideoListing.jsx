@@ -36,7 +36,7 @@ const VideoListing = () => {
         console.error(err);
       }
     })();
-  }, [selectedGenre]);
+  }, [selectedGenre, videoState, videoDispatch]);
 
   return (
     <div className="video-listing-wrapper pd-1x">
