@@ -12,17 +12,15 @@ const VideoPlayer = () => {
 
   const { videos } = videoState;
 
-  const getSelectedVideoDetail = () => {
-    const video = videoState.videos.find((item) => {
-      return item.videoId === videoId;
-    });
-    if (video) {
-      setSelectedVideo(video);
-    }
-  };
-
   useEffect(() => {
-    getSelectedVideoDetail();
+    (() => {
+      const video = videoState.videos.find((item) => {
+        return item.videoId === videoId;
+      });
+      if (video) {
+        setSelectedVideo(video);
+      }
+    })();
   }, []);
 
   return (
@@ -60,7 +58,11 @@ const VideoPlayer = () => {
       <section className="video-playlist mg-top-1x mg-left-2x">
         <p className="t4">More videos</p>
         {videos.map((item) => (
-          <div className="pointer" onClick={() => setSelectedVideo(item)}>
+          <div
+            className="pointer"
+            onClick={() => setSelectedVideo(item)}
+            key={item.id}
+          >
             <Link to={`/videoplayer/${item.videoId}`} className="no-deco">
               <VideoCard {...item} />
             </Link>

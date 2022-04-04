@@ -1,36 +1,15 @@
 import "./VideoListing.css";
 import React, { useEffect } from "react";
 import { GET } from "../../../utils/axiosHelper";
-import {
-  CHANGE_GENRE,
-  UPDATE_VIDEO_LIST,
-  VIDEOS_API,
-} from "../../../utils/Constants";
+import { UPDATE_VIDEO_LIST, VIDEOS_API } from "../../../utils/Constants";
 import VideoCard from "../../../components/video/VideoCard";
 import { useVideo } from "../../../context/provider/VideoProvider";
 import { Link } from "react-router-dom";
+import { clearSelectedGenre, filterByGenre } from "./helper/videoListingHelper";
 
 const VideoListing = () => {
   const { videoState, videoDispatch } = useVideo();
-
   const { selectedGenre } = videoState;
-
-  const filterByGenre = (genre, videoList) => {
-    const filteredData = videoList.filter(
-      (item) => item.genre.toLowerCase() === genre.toLowerCase()
-    );
-    videoDispatch({
-      type: UPDATE_VIDEO_LIST,
-      payload: { ...videoState, videos: filteredData },
-    });
-  };
-
-  const clearSelectedGenre = () => {
-    videoDispatch({
-      type: CHANGE_GENRE,
-      payload: { ...videoState, selectedGenre: "" },
-    });
-  };
 
   useEffect(() => {
     (async () => {
@@ -38,7 +17,12 @@ const VideoListing = () => {
         const { status, data } = await GET(VIDEOS_API);
         if (status === 201 || 200) {
           if (selectedGenre) {
-            filterByGenre(selectedGenre, data.videos);
+            filterByGenre(
+              selectedGenre,
+              data.videos,
+              videoState,
+              videoDispatch
+            );
           } else {
             videoDispatch({
               type: UPDATE_VIDEO_LIST,
@@ -62,7 +46,7 @@ const VideoListing = () => {
         </p>
         <button
           className="btn-link btn-all-videos"
-          onClick={clearSelectedGenre}
+          onClick={() => clearSelectedGenre(videoState, videoDispatch)}
         >
           All videos
         </button>
