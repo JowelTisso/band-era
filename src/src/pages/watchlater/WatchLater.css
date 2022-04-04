@@ -1,0 +1,18 @@
+.watchlater-wrapper {
+  min-height: 100vh;
+  padding: 1rem 3rem;
+}
+
+.remove-badge-container {
+  position: relative;
+}
+
+.remove-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(244, 36, 36, 0.5);
+  padding: 3px 5px;
+  margin: 3px;
+  border-radius: 3px;
+}
