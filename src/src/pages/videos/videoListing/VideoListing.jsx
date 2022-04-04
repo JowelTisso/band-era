@@ -56,14 +56,13 @@ const VideoListing = () => {
         </button>
       </div>
       <main className="videos-container">
-        {videos.map(({ _id, videoId, title, thumbnail, artist }) => (
-          <Link to={`/videoplayer/${videoId}`} key={_id} className="no-deco">
-            <VideoCard
-              img={thumbnail}
-              title={title}
-              artist={artist}
-              views={"40M"}
-            />
+        {videos.map((data) => (
+          <Link
+            to={`/videoplayer/${data.videoId}`}
+            key={data._id}
+            className="no-deco"
+          >
+            <VideoCard {...data} />
           </Link>
         ))}
       </main>
