@@ -37,6 +37,12 @@
   cursor: pointer;
 }
 
+.main-wrapper {
+  min-height: 100vh;
+  padding: 1rem 3rem;
+}
+
+/* Scroll bar */
 ::-webkit-scrollbar-track {
   background-color: var(--bg-color);
 }

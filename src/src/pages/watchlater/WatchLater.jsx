@@ -15,14 +15,14 @@ const WatchLater = () => {
     removeFromWatchLater(authState, selectedVideo, videoDispatch, navigate);
   };
   return (
-    <div className="watchlater-wrapper">
+    <div className="main-wrapper">
       <div className="video-listing-header">
         <p className="t3 video-genre">
           You have {videoState.watchLater?.length} videos in watch later
         </p>
       </div>
       <main className="videos-container pd-top-2x">
-        {videoState.watchLater.map((data) => (
+        {videoState.watchLater?.map((data) => (
           <div className="remove-badge-container" key={data._id}>
             <Link to={`/videoplayer/${data.videoId}`} className="no-deco">
               <VideoCard {...data} />
