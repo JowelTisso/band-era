@@ -1,8 +1,6 @@
 import { DELETE, POST } from "../../../../utils/axiosHelper";
 import {
-  HISTORY_API,
   LIKES_API,
-  UPDATE_HISTORY,
   UPDATE_LIKED_VIDEOS,
   UPDATE_WATCH_LATER,
   WATCHLATER_API,
