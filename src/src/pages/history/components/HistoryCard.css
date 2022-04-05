@@ -1,0 +1,33 @@
+.card .history-card-img {
+  width: 24rem;
+  border-radius: 5px;
+}
+
+.videos-container .card {
+  width: 56rem;
+}
+
+.videos-container .card-horizontal {
+  height: 15rem;
+}
+
+.history-card-title-container {
+  justify-content: space-between;
+}
+
+.history-icon-container {
+  gap: 1rem;
+  width: 10rem;
+  height: min-content;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.history-hover-icon {
+}
+
+.history-hover-icon:hover {
+  opacity: 0.5;
+}

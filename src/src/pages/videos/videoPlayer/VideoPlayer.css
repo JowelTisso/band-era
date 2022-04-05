@@ -24,27 +24,6 @@
   gap: 2rem;
 }
 
-.card-horizontal {
-  height: 10rem;
-  margin: 0;
-  min-width: 44rem;
-}
-
-.card-img-horizontal {
-  width: 15rem;
-  object-fit: cover;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.card-content-horizontal {
-  padding-left: 1rem;
-}
-
-.card-content {
-  padding: 0;
-}
-
 /* Utils */
 .flex {
   display: flex;
