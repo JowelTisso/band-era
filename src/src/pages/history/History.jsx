@@ -2,7 +2,7 @@ import React from "react";
 import "./History.css";
 
 const History = () => {
-  return <div>History</div>;
+  return <div className="main-wrapper">History</div>;
 };
 
 export { History };

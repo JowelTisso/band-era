@@ -42,7 +42,7 @@ const VideoListing = () => {
   }, []);
 
   return (
-    <div className="video-listing-wrapper pd-1x">
+    <div className="main-wrapper">
       <div className="video-listing-header">
         <p className="t3 video-genre">
           {selectedGenre ? selectedGenre : "All"}
@@ -54,7 +54,7 @@ const VideoListing = () => {
           All videos
         </button>
       </div>
-      <main className="videos-container">
+      <main className="videos-container pd-top-1x">
         {videoState.videos.map((data) => (
           <Link
             to={`/videoplayer/${data.videoId}`}

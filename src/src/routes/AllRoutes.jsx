@@ -9,6 +9,7 @@ import {
   Auth,
   VideoPlayer,
 } from "../pages";
+import PrivateRoutes from "./PrivateRoutes";
 
 const AllRoutes = () => {
   return (
@@ -16,9 +17,30 @@ const AllRoutes = () => {
       <Route path="/" element={<Home />} />
       <Route path="/videos" element={<VideoListing />} />
       <Route path="/videoplayer/:videoId" element={<VideoPlayer />} />
-      <Route path="/playlist" element={<Playlist />} />
-      <Route path="/watchlater" element={<WatchLater />} />
-      <Route path="/history" element={<History />} />
+      <Route
+        path="/playlist"
+        element={
+          <PrivateRoutes>
+            <Playlist />
+          </PrivateRoutes>
+        }
+      />
+      <Route
+        path="/watchlater"
+        element={
+          <PrivateRoutes>
+            <WatchLater />
+          </PrivateRoutes>
+        }
+      />
+      <Route
+        path="/history"
+        element={
+          <PrivateRoutes>
+            <History />
+          </PrivateRoutes>
+        }
+      />
       <Route path="/auth" element={<Auth />} />
     </Routes>
   );

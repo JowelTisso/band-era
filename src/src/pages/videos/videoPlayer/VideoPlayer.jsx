@@ -4,9 +4,12 @@ import { useVideo } from "../../../context/provider/VideoProvider";
 import "./VideoPlayer.css";
 import { MdThumbUp, MdOutlineThumbUpOffAlt } from "react-icons/md";
 import VideoCard from "./components/VideoCard";
-import { DELETE, POST } from "../../../utils/axiosHelper";
-import { LIKES_API, UPDATE_LIKED_VIDEOS } from "../../../utils/Constants";
 import { useAuth } from "../../../context/provider/AuthProvider";
+import {
+  addLikeToVideo,
+  addToWatchLater,
+  removeLikeFromVideo,
+} from "./helper/videoActionHelper";
 
 const VideoPlayer = () => {
   const { videoId } = useParams();
@@ -17,37 +20,26 @@ const VideoPlayer = () => {
   const { authState } = useAuth();
   const navigate = useNavigate();
 
-  const addLikeToVideo = async () => {
-    if (authState.loggedIn) {
-      const res = await POST(LIKES_API, selectedVideo);
-      if (res?.status === 200 || 201) {
-        videoDispatch({
-          type: UPDATE_LIKED_VIDEOS,
-          payload: { likedVideos: res?.data.likes },
-        });
-      }
-    } else {
-      navigate("/auth");
-    }
-  };
-
-  const removeLikeFromVideo = async () => {
-    if (authState.loggedIn) {
-      const res = await DELETE(`${LIKES_API}/${selectedVideo._id}`);
-      if (res?.status === 200 || 201) {
-        videoDispatch({
-          type: UPDATE_LIKED_VIDEOS,
-          payload: { likedVideos: res?.data.likes },
-        });
-      }
-    } else {
-      navigate("/auth");
-    }
-  };
-
-  const isLiked = videoState.likedVideos.some(
+  const isLiked = videoState?.likedVideos.some(
     (item) => item.videoId === selectedVideo.videoId
   );
+
+  const inWatchLater = videoState?.watchLater.some(
+    (item) => item.videoId === selectedVideo.videoId
+  );
+
+  const removeLikeHandler = () => {
+    removeLikeFromVideo(authState, selectedVideo, videoDispatch, navigate);
+  };
+
+  const addLikeHandler = () => {
+    addLikeToVideo(authState, selectedVideo, videoDispatch, navigate);
+  };
+
+  const watchLaterHandler = () => {
+    !inWatchLater &&
+      addToWatchLater(authState, selectedVideo, videoDispatch, navigate);
+  };
 
   useEffect(() => {
     (() => {
@@ -83,15 +75,17 @@ const VideoPlayer = () => {
             </div>
             <div className="video-user-action flex">
               {isLiked ? (
-                <div onClick={removeLikeFromVideo}>
+                <div onClick={removeLikeHandler}>
                   <MdThumbUp className="t3 pointer" />
                 </div>
               ) : (
-                <div onClick={addLikeToVideo}>
+                <div onClick={addLikeHandler}>
                   <MdOutlineThumbUpOffAlt className="t3 pointer" />
                 </div>
               )}
-              <p className="t4 fw-1x pointer">Watch Later</p>
+              <p className="t4 fw-1x pointer" onClick={watchLaterHandler}>
+                {inWatchLater ? "Added" : "Watch Later"}
+              </p>
               <p className="t4 fw-1x pointer">Add to Playlist</p>
             </div>
           </section>
