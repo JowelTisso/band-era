@@ -52,8 +52,6 @@ const VideoPlayer = () => {
     })();
   }, [videoId, videoState]);
 
-  useEffect(() => {}, []);
-
   return (
     <div className="videoplayer-wrapper">
       <main className="video-player">
