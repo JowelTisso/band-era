@@ -5,11 +5,24 @@ import { UPDATE_VIDEO_LIST, VIDEOS_API } from "../../../utils/Constants";
 import VideoCard from "../../../components/video/VideoCard";
 import { useVideo } from "../../../context/provider/VideoProvider";
 import { Link } from "react-router-dom";
-import { clearSelectedGenre, filterByGenre } from "./helper/videoListingHelper";
+import {
+  addToHistory,
+  clearSelectedGenre,
+  filterByGenre,
+} from "./helper/videoListingHelper";
+import { useAuth } from "../../../context/provider/AuthProvider";
 
 const VideoListing = () => {
   const { videoState, videoDispatch } = useVideo();
   const { selectedGenre } = videoState;
+  const { authState } = useAuth();
+
+  const historyHandler = (selectedVideo) => {
+    const inHistory = videoState?.history.some(
+      (item) => item.videoId === selectedVideo.videoId
+    );
+    !inHistory && addToHistory(authState, selectedVideo, videoDispatch);
+  };
 
   useEffect(() => {
     (async () => {
@@ -37,7 +50,7 @@ const VideoListing = () => {
   }, [selectedGenre, videoState, videoDispatch]);
 
   useEffect(() => {
-    // Work around for window auto scrolling to bottom
+    // Work around for window scroll remaining in bottom
     window.scrollTo(0, 0);
   }, []);
 
@@ -61,7 +74,9 @@ const VideoListing = () => {
             key={data._id}
             className="no-deco"
           >
-            <VideoCard {...data} />
+            <div onClick={() => historyHandler(data)}>
+              <VideoCard {...data} />
+            </div>
           </Link>
         ))}
       </main>
