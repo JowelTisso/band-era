@@ -1,6 +1,6 @@
 import "./Toast.css";
 import React from "react";
-import { FcOk, FcHighPriority, FcInfo } from "react-icons/fc";
+import { FcOk, FcHighPriority } from "react-icons/fc";
 import { GrFormClose } from "react-icons/gr";
 import toast from "react-hot-toast";
 
