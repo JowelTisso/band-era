@@ -45,18 +45,14 @@ const History = () => {
               <HistoryCard {...data} data={data} />
             </Link>
             <span className="history-icon-container flex">
-              <div
-                className="history-hover-icon pointer"
+              <AiOutlineClose
+                className="t3 hover-icon pointer"
                 onClick={() => historyHandler(data)}
-              >
-                <AiOutlineClose className="t3 hover-icon" />
-              </div>
-              <div
-                className="history-hover-icon pointer"
+              />
+              <MdWatchLater
+                className="t3 hover-icon pointer"
                 onClick={() => watchLaterHandler(data)}
-              >
-                <MdWatchLater className="t3 " />
-              </div>
+              />
             </span>
           </div>
         ))}

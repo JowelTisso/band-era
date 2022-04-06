@@ -9,7 +9,7 @@ export const removeFromWatchLater = async (
 ) => {
   if (authState.loggedIn) {
     const res = await DELETE(`${WATCHLATER_API}/${selectedVideo._id}`);
-    if (res?.status === 200 || 201) {
+    if (res?.status === 200 || res?.status === 201) {
       videoDispatch({
         type: UPDATE_WATCH_LATER,
         payload: { watchLater: res?.data.watchlater },

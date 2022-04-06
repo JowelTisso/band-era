@@ -26,7 +26,7 @@ export const clearSelectedGenre = (videoState, videoDispatch) => {
 export const addToHistory = async (authState, selectedVideo, videoDispatch) => {
   if (authState.loggedIn) {
     const res = await POST(HISTORY_API, selectedVideo);
-    if (res?.status === 200 || 201) {
+    if (res?.status === 200 || res?.status === 201) {
       videoDispatch({
         type: UPDATE_HISTORY,
         payload: { history: res?.data.history || [] },

@@ -16,7 +16,7 @@ const Home = () => {
 
   const getCategories = async () => {
     const { status = 0, data = {} } = await GET("/api/categories");
-    if (status === 200 || 201) {
+    if (status === 200 || status === 201) {
       setCategories(data.categories);
     }
   };

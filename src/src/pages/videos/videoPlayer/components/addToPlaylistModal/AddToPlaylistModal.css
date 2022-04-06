@@ -1,0 +1,16 @@
+.modal-list-container {
+  width: 35rem;
+  height: 22rem;
+  overflow-y: auto;
+}
+
+.modal-list-item {
+  background-color: var(--bg-color-light);
+  border-radius: 5px;
+  height: 4rem;
+  overflow: hidden;
+}
+
+.modal-list-item:hover {
+  background-color: var(--secondary-color-dark);
+}

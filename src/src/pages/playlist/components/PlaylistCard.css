@@ -1,0 +1,10 @@
+.card-only-text {
+  background-color: var(--bg-color-light);
+  border: none;
+  padding: 1.5rem 2rem;
+  width: 35rem;
+}
+
+.card-sub-title {
+  margin-top: 2px;
+}

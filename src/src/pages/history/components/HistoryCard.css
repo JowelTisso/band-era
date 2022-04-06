@@ -25,9 +25,6 @@
   right: 0;
 }
 
-.history-hover-icon {
-}
-
-.history-hover-icon:hover {
+.hover-icon:hover {
   opacity: 0.5;
 }

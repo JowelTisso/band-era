@@ -3,7 +3,8 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useVideo } from "../../../context/provider/VideoProvider";
 import "./VideoPlayer.css";
 import { MdThumbUp, MdOutlineThumbUpOffAlt } from "react-icons/md";
-import VideoCard from "./components/VideoCard";
+import VideoCard from "./components/videoCard/VideoCard";
+import AddToPlaylistModal from "./components/addToPlaylistModal/AddToPlaylistModal";
 import { useAuth } from "../../../context/provider/AuthProvider";
 import {
   addLikeToVideo,
@@ -15,6 +16,7 @@ const VideoPlayer = () => {
   const { videoId } = useParams();
   const { videoState, videoDispatch } = useVideo();
   const [selectedVideo, setSelectedVideo] = useState({});
+  const [isModal, setIsModal] = useState(false);
 
   const { videos } = videoState;
   const { authState } = useAuth();
@@ -39,6 +41,10 @@ const VideoPlayer = () => {
   const watchLaterHandler = () => {
     !inWatchLater &&
       addToWatchLater(authState, selectedVideo, videoDispatch, navigate);
+  };
+
+  const toggleModal = () => {
+    authState.loggedIn ? setIsModal((state) => !state) : navigate("/auth");
   };
 
   useEffect(() => {
@@ -86,7 +92,9 @@ const VideoPlayer = () => {
               <p className="t4 fw-1x pointer" onClick={watchLaterHandler}>
                 {inWatchLater ? "Added" : "Watch Later"}
               </p>
-              <p className="t4 fw-1x pointer">Add to Playlist</p>
+              <p className="t4 fw-1x pointer" onClick={toggleModal}>
+                Add to Playlist
+              </p>
             </div>
           </section>
           <p className="t3 fw-1x">{selectedVideo.title}</p>
@@ -107,6 +115,12 @@ const VideoPlayer = () => {
           </div>
         ))}
       </section>
+      {isModal && (
+        <AddToPlaylistModal
+          toggleModal={toggleModal}
+          selectedVideo={selectedVideo}
+        />
+      )}
     </div>
   );
 };

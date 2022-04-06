@@ -1,0 +1,10 @@
+.playlist-card-container {
+  position: relative;
+  width: 35rem;
+}
+
+.playlist-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}

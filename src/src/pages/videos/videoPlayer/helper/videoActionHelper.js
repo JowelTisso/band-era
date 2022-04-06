@@ -14,7 +14,7 @@ export const addLikeToVideo = async (
 ) => {
   if (authState.loggedIn) {
     const res = await POST(LIKES_API, selectedVideo);
-    if (res?.status === 200 || 201) {
+    if (res?.status === 200 || res?.status === 201) {
       videoDispatch({
         type: UPDATE_LIKED_VIDEOS,
         payload: { likedVideos: res?.data.likes },
@@ -33,7 +33,7 @@ export const removeLikeFromVideo = async (
 ) => {
   if (authState.loggedIn) {
     const res = await DELETE(`${LIKES_API}/${selectedVideo._id}`);
-    if (res?.status === 200 || 201) {
+    if (res?.status === 200 || res?.status === 201) {
       videoDispatch({
         type: UPDATE_LIKED_VIDEOS,
         payload: { likedVideos: res?.data.likes },
@@ -52,7 +52,7 @@ export const addToWatchLater = async (
 ) => {
   if (authState.loggedIn) {
     const res = await POST(WATCHLATER_API, selectedVideo);
-    if (res?.status === 200 || 201) {
+    if (res?.status === 200 || res?.status === 201) {
       videoDispatch({
         type: UPDATE_WATCH_LATER,
         payload: { watchLater: res?.data.watchlater },
