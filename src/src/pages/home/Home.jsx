@@ -4,7 +4,7 @@ import Carousel from "../../components/carousel/Carousel";
 import CategoryCard from "../../components/category/CategoryCard";
 import { useVideo } from "../../context/provider/VideoProvider";
 import { GET } from "../../utils/axiosHelper";
-import { CHANGE_GENRE } from "../../utils/Constants";
+import { CATEGORIES_API, CHANGE_GENRE } from "../../utils/Constants";
 import "./Home.css";
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const getCategories = async () => {
-    const { status = 0, data = {} } = await GET("/api/categories");
+    const { status = 0, data = {} } = await GET(CATEGORIES_API);
     if (status === 200 || status === 201) {
       setCategories(data.categories);
     }

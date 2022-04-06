@@ -33,7 +33,7 @@ const Playlist = () => {
       <main className="playlist-container pd-top-1x pd-left-6x">
         {videoState.playlist.map((data) => (
           <div className="playlist-card-container" key={data._id}>
-            <Link to={"/playlist-details"} className="no-deco">
+            <Link to={`/single-playlist/${data._id}`} className="no-deco">
               <PlaylistCard {...data} />
             </Link>
             <span className="history-icon-container flex mg-top-2x">

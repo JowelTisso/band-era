@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { DELETE, POST } from "../../../utils/axiosHelper";
 import { PLAYLIST_API, UPDATE_PLAYLIST } from "../../../utils/Constants";
 
@@ -48,5 +49,8 @@ export const deleteVideoFromPlaylist = async (
       type: UPDATE_PLAYLIST,
       payload: { playlist: res?.data.playlists || [] },
     });
+    toast("Removed from playlist!");
+  } else {
+    toast("Failed to remove from playlist!");
   }
 };
