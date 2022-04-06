@@ -6,14 +6,11 @@ import {
   UPDATE_VIDEO_LIST,
 } from "../../../../utils/Constants";
 
-export const filterByGenre = (genre, videoList, videoState, videoDispatch) => {
+export const filterByGenre = (genre, videoList, updateList) => {
   const filteredData = videoList.filter(
     (item) => item.genre.toLowerCase() === genre.toLowerCase()
   );
-  videoDispatch({
-    type: UPDATE_VIDEO_LIST,
-    payload: { ...videoState, videos: filteredData },
-  });
+  updateList(filteredData);
 };
 
 export const clearSelectedGenre = (videoState, videoDispatch) => {
@@ -33,4 +30,11 @@ export const addToHistory = async (authState, selectedVideo, videoDispatch) => {
       });
     }
   }
+};
+
+export const filterByTitle = (title, videoList, updateList) => {
+  const filteredData = videoList.filter((item) =>
+    item.title.toLowerCase().includes(title.toLowerCase())
+  );
+  updateList(filteredData);
 };

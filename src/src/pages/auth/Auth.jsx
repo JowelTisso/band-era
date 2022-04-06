@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Auth.css";
 import { IoEye, IoEyeOff, IoChevronForward } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/provider/AuthProvider";
 import { userLogIn, userSignUp } from "./helper/authHelper";
 import { LOG_IN, SIGN_UP } from "../../utils/Constants";
@@ -21,6 +21,8 @@ const Auth = () => {
 
   const { authDispatch } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const changeAuthType = () => {
     setAuthTypeIsLogin((state) => !state);
@@ -60,7 +62,7 @@ const Auth = () => {
               user: res?.data?.foundUser,
             },
           });
-          navigate("/");
+          navigate(from, { replace: true });
         }
       } else {
         callToast("All fields are required!", false);

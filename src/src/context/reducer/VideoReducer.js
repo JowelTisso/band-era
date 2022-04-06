@@ -5,6 +5,7 @@ import {
   UPDATE_WATCH_LATER,
   UPDATE_PLAYLIST,
   UPDATE_HISTORY,
+  UPDATE_CATEGORIES,
 } from "../../utils/Constants";
 
 export const reducer = (state, action) => {
@@ -38,6 +39,11 @@ export const reducer = (state, action) => {
       return {
         ...state,
         history: action.payload.history,
+      };
+    case UPDATE_CATEGORIES:
+      return {
+        ...state,
+        categories: action.payload.categories,
       };
     default:
       return state;

@@ -1,15 +1,15 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/provider/AuthProvider";
 
 const PrivateRoutes = ({ children }) => {
   const { authState } = useAuth();
-
-  if (authState.loggedIn) {
-    return children;
-  } else {
-    return <Navigate to={"/auth"} />;
-  }
+  const location = useLocation();
+  return authState.loggedIn ? (
+    children
+  ) : (
+    <Navigate to={"/auth"} state={{ from: location }} replace />
+  );
 };
 
 export default PrivateRoutes;
