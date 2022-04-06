@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import toast from "react-hot-toast";
 import { useVideo } from "../../context/provider/VideoProvider";
 import { createPlaylist } from "../../pages/playlist/helper/playlistHelper";
 import "./AddPlaylistModal.css";
+import { callToast } from "../../components/toast/Toast";
 
 const AddPlaylistModal = ({ toggleModal }) => {
   const { videoDispatch } = useVideo();
@@ -23,10 +23,9 @@ const AddPlaylistModal = ({ toggleModal }) => {
 
       if (res?.status === 200 || res?.status === 201) {
         toggleModal();
-        toast("Playlist added successfully!");
       }
     } else {
-      toast("Fill in required details!");
+      callToast("Fill in required details!", false);
     }
   };
 

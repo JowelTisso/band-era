@@ -14,7 +14,11 @@
   --secondary-color-dark: #2568bb;
 }
 
-* {
+p,
+h1,
+label,
+a,
+svg {
   color: var(--txt-color);
 }
 

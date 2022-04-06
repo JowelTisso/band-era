@@ -1,3 +1,4 @@
+import { callToast } from "../../../components/toast/Toast";
 import { DELETE } from "../../../utils/axiosHelper";
 import { UPDATE_WATCH_LATER, WATCHLATER_API } from "../../../utils/Constants";
 
@@ -14,6 +15,9 @@ export const removeFromWatchLater = async (
         type: UPDATE_WATCH_LATER,
         payload: { watchLater: res?.data.watchlater },
       });
+      callToast("Removed successfully!");
+    } else {
+      callToast("Failed to delete!");
     }
   } else {
     navigate("/auth");

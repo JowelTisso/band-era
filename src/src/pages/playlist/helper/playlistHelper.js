@@ -1,4 +1,4 @@
-import toast from "react-hot-toast";
+import { callToast } from "../../../components/toast/Toast";
 import { DELETE, POST } from "../../../utils/axiosHelper";
 import { PLAYLIST_API, UPDATE_PLAYLIST } from "../../../utils/Constants";
 
@@ -9,6 +9,9 @@ export const createPlaylist = async (playlistInfo, videoDispatch) => {
       type: UPDATE_PLAYLIST,
       payload: { playlist: res?.data.playlists },
     });
+    callToast("Playlist created successfully!");
+  } else {
+    callToast("Failed to create playlist!");
   }
   return res;
 };
@@ -24,6 +27,9 @@ export const addToPlaylist = async (
       type: UPDATE_PLAYLIST,
       payload: { playlist: res?.data.playlists || [] },
     });
+    callToast("Added to playlist!");
+  } else {
+    callToast("Failed to add video to playlist!");
   }
   return res;
 };
@@ -35,6 +41,9 @@ export const deletePlaylist = async (playlistId, videoDispatch) => {
       type: UPDATE_PLAYLIST,
       payload: { playlist: res?.data.playlists || [] },
     });
+    callToast("Deleted successfully!");
+  } else {
+    callToast("Failed to delete!");
   }
 };
 
@@ -49,8 +58,8 @@ export const deleteVideoFromPlaylist = async (
       type: UPDATE_PLAYLIST,
       payload: { playlist: res?.data.playlists || [] },
     });
-    toast("Removed from playlist!");
+    callToast("Removed from playlist!");
   } else {
-    toast("Failed to remove from playlist!");
+    callToast("Failed to remove from playlist!", false);
   }
 };

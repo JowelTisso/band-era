@@ -58,7 +58,7 @@ const Header = () => {
           className="btn-link nav-link-hover btn-sm no-deco mg-right-2x"
           style={activeLinkStyle}
         >
-          PLaylist
+          Playlist
         </NavLink>
         <NavLink
           to={"/history"}

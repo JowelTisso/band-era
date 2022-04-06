@@ -21,7 +21,7 @@ export const reducer = (state, action) => {
         ...state,
         token: action.payload.token,
         user: action.payload.user,
-        loggedIn: true,
+        loggedIn: false,
       };
     default:
       return state;

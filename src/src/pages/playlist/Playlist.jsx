@@ -6,7 +6,7 @@ import { deletePlaylist } from "./helper/playlistHelper";
 import { IoAdd } from "react-icons/io5";
 import PlaylistCard from "./components/PlaylistCard";
 import { Link } from "react-router-dom";
-import { AiOutlineClose } from "react-icons/ai";
+import { IoMdTrash } from "react-icons/io";
 
 const Playlist = () => {
   const { videoState, videoDispatch } = useVideo();
@@ -37,8 +37,8 @@ const Playlist = () => {
               <PlaylistCard {...data} />
             </Link>
             <span className="history-icon-container flex mg-top-2x">
-              <AiOutlineClose
-                className="t3 hover-icon pointer"
+              <IoMdTrash
+                className="hover-icon pointer t3"
                 onClick={() => deletePlaylist(data._id, videoDispatch)}
               />
             </span>

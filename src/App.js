@@ -8,7 +8,7 @@ import { toastOption } from "./src/utils/toastHelper";
 function App() {
   return (
     <div className="App">
-      <Toaster position="top-center" toastOptions={toastOption} />
+      <Toaster position="bottom-left" toastOptions={toastOption} />
       <Header />
       <main className="mg-top-5x pd-top-3x">
         <AllRoutes />
