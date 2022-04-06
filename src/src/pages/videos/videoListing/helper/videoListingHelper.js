@@ -3,7 +3,6 @@ import {
   CHANGE_GENRE,
   HISTORY_API,
   UPDATE_HISTORY,
-  UPDATE_VIDEO_LIST,
 } from "../../../../utils/Constants";
 
 export const filterByGenre = (genre, videoList, updateList) => {
@@ -37,4 +36,11 @@ export const filterByTitle = (title, videoList, updateList) => {
     item.title.toLowerCase().includes(title.toLowerCase())
   );
   updateList(filteredData);
+};
+
+export const sortLatestVideo = (list = []) => {
+  // To sort by comparing the date
+  return [...list].sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
 };

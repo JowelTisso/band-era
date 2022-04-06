@@ -14,6 +14,7 @@ const punkRock = [
     genre: "Punk Rock",
     views: "615M",
     created: "9 years ago",
+    date: "07/08/2013",
     thumbnail:
       "https://i.ytimg.com/vi/Soa3gO7tL-c/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD0ceeBXv2asgWGNWF7RXZ7QfLNWg",
     description:
@@ -27,6 +28,7 @@ const punkRock = [
     genre: "Punk Rock",
     views: "419M",
     created: "12 years ago",
+    date: "01/05/2010",
     thumbnail:
       "https://i.ytimg.com/vi/r00ikilDxW4/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAYDnclIX4D-t17RW1fM-htjk6x3A",
     description:
@@ -40,6 +42,7 @@ const punkRock = [
     genre: "Punk Rock",
     views: "192M",
     created: "12 years ago",
+    date: "01/03/2010",
     thumbnail:
       "https://i.ytimg.com/vi/NU9JoFKlaZ0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC95wZ3vwiHSNrc-nLLvkC9OCmkdg",
     description:
@@ -53,6 +56,7 @@ const punkRock = [
     genre: "Punk Rock",
     views: "63M",
     created: "12 years ago",
+    date: "02/08/2010",
     thumbnail:
       "https://i.ytimg.com/vi/By7ctqcWxyM/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLArXmQfQ7DQ9M6Dv3ZTX7xcJvzTXQ",
     description:
@@ -66,6 +70,7 @@ const punkRock = [
     genre: "Punk Rock",
     views: "66M",
     created: "12 years ago",
+    date: "03/02/2010",
     thumbnail:
       "https://i.ytimg.com/vi/g8z-qP34-1Y/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBvrKQ87tpvCJFZjTrhQ_BU4Xky9w",
     description:
@@ -82,6 +87,7 @@ const metal = [
     genre: "Metal",
     views: "286M",
     created: "10 years ago",
+    date: "10/09/2012",
     thumbnail:
       "https://i.ytimg.com/vi/A7ry4cx6HfY/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCPL_yk1VdOPr8FAnHCoXMo8EHvGQ",
     description:
@@ -95,6 +101,7 @@ const metal = [
     genre: "Metal",
     views: "150M",
     created: "12 years ago",
+    date: "06/25/2010",
     thumbnail:
       "https://i.ytimg.com/vi/mzX0rhF8buo/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD6F3p0tn2NnwEQE3IgpE-eyKB8bg",
     description:
@@ -108,6 +115,7 @@ const metal = [
     genre: "Metal",
     views: "212M",
     created: "8 years ago",
+    date: "01/08/2014",
     thumbnail:
       "https://i.ytimg.com/vi/DelhLppPSxY/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB3hur0ID5yZj5syYtZAiBmAdZuzg",
     description:
@@ -121,6 +129,7 @@ const metal = [
     genre: "Metal",
     views: "248M",
     created: "12 years ago",
+    date: "09/07/2010",
     thumbnail:
       "https://i.ytimg.com/vi/WM8bTdBs-cw/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBE8nkoTBGx6D6VW9iM1YS5-Fz8JQ",
     description:
@@ -134,6 +143,7 @@ const metal = [
     genre: "Metal",
     views: "63M",
     created: "12 years ago",
+    date: "03/03/2010",
     thumbnail:
       "https://i.ytimg.com/vi/K6AJuRK2NE4/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAWbpwQnhO1rXh0LUo1U1HjkTXF3Q",
     description:
@@ -150,6 +160,7 @@ const pop = [
     genre: "Pop",
     views: "3.6B",
     created: "7 years ago",
+    date: "08/20/2015",
     thumbnail:
       "https://i.ytimg.com/vi/09R8_2nJtjg/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAqdjSBqyvPDYWKW-KL523yslY5Dw",
     description:
@@ -163,6 +174,7 @@ const pop = [
     genre: "Pop",
     views: "3.5B",
     created: "8 years ago",
+    date: "01/02/2014",
     thumbnail:
       "https://i.ytimg.com/vi/hT_nvWreIhg/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD07e2ntG66xGjVR_Kk4uHAGuW7bg",
     description:
@@ -176,6 +188,7 @@ const pop = [
     genre: "Pop",
     views: "1.3B",
     created: "10 years ago",
+    date: "05/13/2012",
     thumbnail:
       "https://i.ytimg.com/vi/QJO3ROT-A4E/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB903vulhEksIh35Jr8bE66o_YpUw",
     description: "Check out One Direction’s 10 Year Anniversary website",
@@ -188,6 +201,7 @@ const pop = [
     genre: "Pop",
     views: "995M",
     created: "6 years ago",
+    date: "08/15/2016",
     thumbnail:
       "https://i.ytimg.com/vi/Jwgf3wmiA04/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDMrXF7n_wv2mthSlGA-t6pymuTVw",
     description: "Check out One Direction’s 10 Year Anniversary website",
@@ -200,6 +214,7 @@ const pop = [
     genre: "Pop",
     views: "6.8M",
     created: "9 years ago",
+    date: "06/21/2013",
     thumbnail:
       "https://i.ytimg.com/vi/Z9pWgjSLLag/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD6RYFmYsk0_hlJudZF7WLGHeTzVw",
     description:
@@ -216,6 +231,7 @@ const rock = [
     genre: "Rock",
     views: "832M",
     created: "9 years ago",
+    date: "08/12/2010",
     thumbnail:
       "https://i.ytimg.com/vi/pAgnJDJN4VA/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC2vejqrEyBg0540IhDSl8OlmMfEA",
     description: "Official 4K Video for Back In Black by AC/DC",
@@ -228,6 +244,7 @@ const rock = [
     genre: "Rock",
     views: "228M",
     created: "9 years ago",
+    date: "08/14/2013",
     thumbnail:
       "https://i.ytimg.com/vi/l482T0yNkeo/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBzeXSbvY2xOsVbMi0WKyqDvrk8ag",
     description: "Official 4K Video for Highway to Hell by AC/DC",
@@ -240,6 +257,7 @@ const rock = [
     genre: "Rock",
     views: "246M",
     created: "9 years ago",
+    date: "07/08/2013",
     thumbnail:
       "https://i.ytimg.com/vi/Lo2qQmj0_h4/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBXrYvD_y-oonlIAn4sGzzE2Ru-8A",
     description: "Official 4K Video for You Shook Me All Night Long by AC/DC",
@@ -252,6 +270,7 @@ const rock = [
     genre: "Rock",
     views: "1.3B",
     created: "12 years ago",
+    date: "01/28/2010",
     thumbnail:
       "https://i.ytimg.com/vi/1w7OgIMMRc4/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBZJmDlnn8QxL4f8hygsliBtmRnMA",
     description: "REMASTERED IN HD! OVER A BILLION VIEWS!",
@@ -264,6 +283,7 @@ const rock = [
     genre: "Rock",
     views: "928M",
     created: "12 years ago",
+    date: "06/03/2010",
     thumbnail:
       "https://i.ytimg.com/vi/YlUKcNNmywk/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDRZL3dr-uyBFO64ZAxIx8GQGCynA",
     description:
@@ -280,6 +300,7 @@ const electronic = [
     genre: "Electronic",
     views: "190M",
     created: "13 years ago",
+    date: "08/21/2010",
     thumbnail:
       "https://i.ytimg.com/vi/yZIummTz9mM/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA6O44RNIsRKMOCahE1Ql_mA-XJ5A",
     description:
@@ -293,6 +314,7 @@ const electronic = [
     genre: "Electronic",
     views: "212M",
     created: "11 years ago",
+    date: "08/30/2011",
     thumbnail:
       "https://i.ytimg.com/vi/5qF_qbaWt3Q/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDueUF7WdPsm8KfjwOcBBnj7Bly9g",
     description:
@@ -306,6 +328,7 @@ const electronic = [
     genre: "Electronic",
     views: "516M",
     created: "12 years ago",
+    date: "02/12/2010",
     thumbnail:
       "https://i.ytimg.com/vi/ysSxxIqKNN0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCfn1WTrhd1n83l7fbRM8xunzPdqw",
     description:
@@ -322,6 +345,7 @@ const alternativeRock = [
     genre: "Alternative Rock",
     views: "246M",
     created: "9 years ago",
+    date: "07/16/2013",
     thumbnail:
       "https://i.ytimg.com/vi/Lo2qQmj0_h4/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBXrYvD_y-oonlIAn4sGzzE2Ru-8A",
     description: "Official 4K Video for You Shook Me All Night Long by AC/DC",
@@ -334,6 +358,7 @@ const alternativeRock = [
     genre: "Rock",
     views: "1.3B",
     created: "12 years ago",
+    date: "04/22/2010",
     thumbnail:
       "https://i.ytimg.com/vi/1w7OgIMMRc4/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBZJmDlnn8QxL4f8hygsliBtmRnMA",
     description: "REMASTERED IN HD! OVER A BILLION VIEWS!",
@@ -346,6 +371,7 @@ const alternativeRock = [
     genre: "Rock",
     views: "928M",
     created: "12 years ago",
+    date: "04/11/2010",
     thumbnail:
       "https://i.ytimg.com/vi/YlUKcNNmywk/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDRZL3dr-uyBFO64ZAxIx8GQGCynA",
     description:
@@ -362,6 +388,7 @@ const alternativeMetal = [
     genre: "Alternative Metal",
     views: "212M",
     created: "8 years ago",
+    date: "05/18/2014",
     thumbnail:
       "https://i.ytimg.com/vi/DelhLppPSxY/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB3hur0ID5yZj5syYtZAiBmAdZuzg",
     description:
@@ -375,6 +402,7 @@ const alternativeMetal = [
     genre: "Alternative Metal",
     views: "248M",
     created: "12 years ago",
+    date: "04/14/2010",
     thumbnail:
       "https://i.ytimg.com/vi/WM8bTdBs-cw/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBE8nkoTBGx6D6VW9iM1YS5-Fz8JQ",
     description:
@@ -388,6 +416,7 @@ const alternativeMetal = [
     genre: "Alternative Metal",
     views: "63M",
     created: "12 years ago",
+    date: "01/08/2010",
     thumbnail:
       "https://i.ytimg.com/vi/K6AJuRK2NE4/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAWbpwQnhO1rXh0LUo1U1HjkTXF3Q",
     description:
