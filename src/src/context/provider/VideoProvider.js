@@ -11,6 +11,7 @@ const VideoProvider = ({ children }) => {
     watchLater: [],
     playlist: [],
     history: [],
+    categories: [],
   };
   const [state, dispatch] = useReducer(reducer, defaultData);
 

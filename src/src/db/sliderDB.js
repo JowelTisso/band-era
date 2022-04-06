@@ -27,3 +27,48 @@ export const sliderDB = [
     img: "https://images.unsplash.com/photo-1548444085-5541bf3ae73b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
   },
 ];
+
+export const combinedCategory = [
+  {
+    _id: "ae1194d9-9957-4c82-a78d-c50006a31582",
+    subCategoryName: "Electronic",
+    subCategoryImg:
+      "https://i.ytimg.com/vi/51iquRYKPbs/hqdefault.jpg?sqp=-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ==&rs=AOn4CLAZDcEALdMvcUKtuPCIhuWsL3E8vQ",
+  },
+  {
+    _id: "74e46f1b-96df-4ca7-ba63-4841c95bd7b0",
+    subCategoryName: "Alternative Metal",
+    subCategoryImg:
+      "https://i.ytimg.com/vi/9sTQ0QdkN3Q/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAgYSimwcF4ZaZilfwy1_TZD5m4tQ",
+  },
+  {
+    _id: "ec4ee3c5-6f7e-445a-8de6-321a3f5e6a98",
+    subCategoryName: "Pop",
+    subCategoryImg:
+      "https://i.ytimg.com/vi/r0U0AlLVqpk/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD8NRqz9TG3lgwyeJ94eUa5GAvOJQ",
+  },
+  {
+    _id: "e848592d-11dc-4073-bd9d-f2a799a4c49f",
+    subCategoryName: "Metal",
+    subCategoryImg:
+      "https://i.ytimg.com/vi/GbwHAxd3BNk/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC0YV6UWweY4pgU530TTH5lYP-uig",
+  },
+  {
+    _id: "66ecfec1-53eb-4344-a9f5-8c396325efce",
+    subCategoryName: "Rock",
+    subCategoryImg:
+      "https://i.ytimg.com/vi/O-fyNgHdmLI/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBDnr_oUPjSWvXE5vCWlAgVISn76Q",
+  },
+  {
+    _id: "bc33ae20-c2fe-4c03-99ab-62f6fd65fcfb",
+    subCategoryName: "Pop",
+    subCategoryImg:
+      "https://i.ytimg.com/vi/lic0oCDMfwk/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCJbCzh6vEVZH1WkY87vZinxF5Y-Q",
+  },
+  {
+    _id: "13bf2fc3-3dfa-4ee0-9f0e-9ae5838aad1e",
+    subCategoryName: "Rock",
+    subCategoryImg:
+      "https://i.ytimg.com/vi/HKtsdZs9LJo/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJn9hkILK8M6oA62gEPVbJPKhm0w",
+  },
+];
