@@ -18,7 +18,7 @@ const SinglePlaylist = () => {
       );
       setPlaylistVideos(playlist.videos);
     })();
-  }, [videoState.playlist]);
+  }, [videoState.playlist, playlistId]);
 
   return (
     <div className="main-wrapper">
