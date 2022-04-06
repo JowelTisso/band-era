@@ -8,6 +8,7 @@ import {
   History,
   Auth,
   VideoPlayer,
+  SinglePlaylist,
 } from "../pages";
 import PrivateRoutes from "./PrivateRoutes";
 
@@ -38,6 +39,14 @@ const AllRoutes = () => {
         element={
           <PrivateRoutes>
             <History />
+          </PrivateRoutes>
+        }
+      />
+      <Route
+        path="/single-playlist/:playlistId"
+        element={
+          <PrivateRoutes>
+            <SinglePlaylist />
           </PrivateRoutes>
         }
       />
