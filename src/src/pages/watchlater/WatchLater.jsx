@@ -5,6 +5,7 @@ import VideoCard from "../../components/video/VideoCard";
 import { useVideo } from "../../context/provider/VideoProvider";
 import { removeFromWatchLater } from "./helper/WatchLaterHelper";
 import { useAuth } from "../../context/provider/AuthProvider";
+import { IoMdTrash } from "react-icons/io";
 
 const WatchLater = () => {
   const { videoState, videoDispatch } = useVideo();
@@ -27,12 +28,10 @@ const WatchLater = () => {
             <Link to={`/videoplayer/${data.videoId}`} className="no-deco">
               <VideoCard {...data} />
             </Link>
-            <span
-              className="remove-badge pointer"
+            <IoMdTrash
+              className="remove-badge pointer t3"
               onClick={() => removeHandler(data)}
-            >
-              Remove
-            </span>
+            />
           </div>
         ))}
       </main>

@@ -5,9 +5,9 @@ import { useAuth } from "../../context/provider/AuthProvider";
 import { useVideo } from "../../context/provider/VideoProvider";
 import { addToWatchLater } from "../videos/videoPlayer/helper/videoActionHelper";
 import HistoryCard from "./components/HistoryCard";
-import { AiOutlineClose } from "react-icons/ai";
 import { MdWatchLater } from "react-icons/md";
 import { removeFromHistory, clearHistory } from "./helper/historyHelper";
+import { IoMdTrash } from "react-icons/io";
 
 const History = () => {
   const { videoState, videoDispatch } = useVideo();
@@ -45,8 +45,8 @@ const History = () => {
               <HistoryCard {...data} data={data} />
             </Link>
             <span className="history-icon-container flex">
-              <AiOutlineClose
-                className="t3 hover-icon pointer"
+              <IoMdTrash
+                className="hover-icon pointer t3"
                 onClick={() => historyHandler(data)}
               />
               <MdWatchLater

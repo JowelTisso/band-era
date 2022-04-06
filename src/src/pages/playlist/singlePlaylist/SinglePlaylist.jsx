@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import HistoryCard from "../../../pages/history/components/HistoryCard";
 import { useVideo } from "../../../context/provider/VideoProvider";
-import { AiOutlineClose } from "react-icons/ai";
 import { deleteVideoFromPlaylist } from "../helper/playlistHelper";
+import { IoMdTrash } from "react-icons/io";
 
 const SinglePlaylist = () => {
   const { videoState, videoDispatch } = useVideo();
@@ -35,8 +35,8 @@ const SinglePlaylist = () => {
                 <HistoryCard {...data} data={data} />
               </Link>
               <span className="history-icon-container flex">
-                <AiOutlineClose
-                  className="t3 hover-icon pointer"
+                <IoMdTrash
+                  className="hover-icon pointer t3"
                   onClick={() =>
                     deleteVideoFromPlaylist(playlistId, data._id, videoDispatch)
                   }
@@ -45,7 +45,7 @@ const SinglePlaylist = () => {
             </div>
           ))
         ) : (
-          <p className="t4">Add videos to playlist</p>
+          <p className="t3 mg-top-2x fw-1x">Add videos to playlist</p>
         )}
       </main>
     </div>

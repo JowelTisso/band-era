@@ -27,19 +27,19 @@ const VideoListing = () => {
   useEffect(() => {
     (async () => {
       try {
-        const { status, data } = await GET(VIDEOS_API);
-        if (status === 201 || 200) {
+        const res = await GET(VIDEOS_API);
+        if (res?.status === 201 || 200) {
           if (selectedGenre) {
             filterByGenre(
               selectedGenre,
-              data.videos,
+              res?.data.videos,
               videoState,
               videoDispatch
             );
           } else {
             videoDispatch({
               type: UPDATE_VIDEO_LIST,
-              payload: { ...videoState, videos: data.videos },
+              payload: { ...videoState, videos: res?.data.videos },
             });
           }
         }

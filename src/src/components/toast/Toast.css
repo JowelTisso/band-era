@@ -1,0 +1,24 @@
+.toast-container {
+  min-width: 25rem;
+  height: 5rem;
+  border-radius: 5px;
+  background-color: var(--txt-color);
+  padding-left: 1rem;
+}
+
+.toast-msg {
+  color: var(--txt-color-dark);
+  flex: 1;
+  text-align: center;
+}
+
+.toast-close:hover {
+  opacity: 0.5;
+}
+
+.error-icon {
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  width: 3.3rem;
+  height: 3.3rem;
+}

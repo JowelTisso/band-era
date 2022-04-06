@@ -62,6 +62,7 @@
   top: 25%;
   right: 3%;
   font-size: 2rem;
+  color: var(--txt-color-dark);
 }
 
 .btn-link {

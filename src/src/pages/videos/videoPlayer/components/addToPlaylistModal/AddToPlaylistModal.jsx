@@ -5,7 +5,7 @@ import {
   createPlaylist,
   addToPlaylist,
 } from "../../../../playlist/helper/playlistHelper";
-import toast from "react-hot-toast";
+import { callToast } from "../../../../../components/toast/Toast";
 
 const AddToPlaylistModal = ({ toggleModal, selectedVideo }) => {
   const [newPlaylistInfo, setNewPlaylistInfo] = useState({
@@ -26,24 +26,18 @@ const AddToPlaylistModal = ({ toggleModal, selectedVideo }) => {
       );
       if (res?.status === 200 || res?.status === 201) {
         toggleAddMode();
-        toast("Playlist added successfully!");
-      } else {
-        console.log("else");
       }
     } else {
-      toast("Fill in required details!");
+      callToast("Fill in required details!", false);
     }
   };
 
-  const addHandler = async (playlist, video, videoDispatch) => {
+  const addHandler = (playlist, video, videoDispatch) => {
     const inList = playlist.videos.some((item) => item._id === video._id);
     if (!inList) {
-      const res = await addToPlaylist(playlist._id, video, videoDispatch);
-      if (res?.status === 200 || res?.status === 201) {
-        toast("Added to playlist!");
-      }
+      addToPlaylist(playlist._id, video, videoDispatch);
     } else {
-      toast("Video already added to this playlist!");
+      callToast("Video already added to this playlist!", callToast);
     }
   };
 
