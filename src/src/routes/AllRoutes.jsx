@@ -10,6 +10,7 @@ import {
   VideoPlayer,
   SinglePlaylist,
 } from "../pages";
+import NotFound from "../pages/notfound/NotFound";
 import PrivateRoutes from "./PrivateRoutes";
 
 const AllRoutes = () => {
@@ -51,6 +52,7 @@ const AllRoutes = () => {
         }
       />
       <Route path="/auth" element={<Auth />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
