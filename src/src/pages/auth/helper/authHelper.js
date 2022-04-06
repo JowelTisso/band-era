@@ -6,7 +6,7 @@ import { LOG_IN_API } from "../../../utils/Constants";
 export const userLogIn = async (payload) => {
   try {
     const { status, data } = await POST_AUTH(LOG_IN_API, payload);
-    if (status === 200 || 201) {
+    if (status === 200 || status === 201) {
       setUserToken(data.encodedToken);
     }
     return { status, data };
@@ -27,7 +27,7 @@ export const userLogout = (authDispatch) => {
 export const userSignUp = async (payload) => {
   try {
     const { status, data } = await POST_AUTH(SIGN_UP_API, payload);
-    if (status === 200 || 201) {
+    if (status === 200 || status === 201) {
       setUserToken(data.encodedToken);
     }
     return { status, data };

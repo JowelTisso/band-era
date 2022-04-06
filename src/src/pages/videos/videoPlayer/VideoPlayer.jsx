@@ -44,7 +44,7 @@ const VideoPlayer = () => {
   };
 
   const toggleModal = () => {
-    setIsModal((state) => !state);
+    authState.loggedIn ? setIsModal((state) => !state) : navigate("/auth");
   };
 
   useEffect(() => {

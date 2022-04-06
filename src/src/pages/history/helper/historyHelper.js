@@ -9,7 +9,7 @@ export const removeFromHistory = async (
 ) => {
   if (authState.loggedIn) {
     const res = await DELETE(`${HISTORY_API}/${selectedVideo._id}`);
-    if (res?.status === 200 || 201) {
+    if (res?.status === 200 || res?.status === 201) {
       videoDispatch({
         type: UPDATE_HISTORY,
         payload: { history: res?.data.history },
@@ -22,7 +22,7 @@ export const removeFromHistory = async (
 
 export const clearHistory = async (videoDispatch) => {
   const res = await DELETE(`${HISTORY_API}/all`);
-  if (res?.status === 200 || 201) {
+  if (res?.status === 200 || res?.status === 201) {
     videoDispatch({
       type: UPDATE_HISTORY,
       payload: { history: [] },

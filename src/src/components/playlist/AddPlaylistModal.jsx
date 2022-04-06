@@ -11,9 +11,9 @@ const AddPlaylistModal = ({ toggleModal }) => {
     description: "",
   });
 
-  const saveHandler = () => {
+  const saveHandler = async () => {
     if (newPlaylistInfo.title && newPlaylistInfo.description) {
-      const res = createPlaylist(
+      const res = await createPlaylist(
         {
           title: newPlaylistInfo.title,
           description: newPlaylistInfo.description,
@@ -21,7 +21,7 @@ const AddPlaylistModal = ({ toggleModal }) => {
         videoDispatch
       );
 
-      if (res?.status === 200 || 201) {
+      if (res?.status === 200 || res?.status === 201) {
         toggleModal();
         toast("Playlist added successfully!");
       }

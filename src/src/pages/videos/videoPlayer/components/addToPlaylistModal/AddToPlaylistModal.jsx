@@ -15,19 +15,20 @@ const AddToPlaylistModal = ({ toggleModal, selectedVideo }) => {
   const { videoState, videoDispatch } = useVideo();
   const [isAddMode, setIsAddMode] = useState(false);
 
-  const saveHandler = () => {
+  const saveHandler = async () => {
     if (newPlaylistInfo.title && newPlaylistInfo.description) {
-      const res = createPlaylist(
+      const res = await createPlaylist(
         {
           title: newPlaylistInfo.title,
           description: newPlaylistInfo.description,
         },
         videoDispatch
       );
-
-      if (res?.status === 200 || 201) {
+      if (res?.status === 200 || res?.status === 201) {
         toggleAddMode();
         toast("Playlist added successfully!");
+      } else {
+        console.log("else");
       }
     } else {
       toast("Fill in required details!");
@@ -37,8 +38,8 @@ const AddToPlaylistModal = ({ toggleModal, selectedVideo }) => {
   const addHandler = async (playlist, video, videoDispatch) => {
     const inList = playlist.videos.some((item) => item._id === video._id);
     if (!inList) {
-      const res = await addToPlaylist(playlist, video, videoDispatch);
-      if (res?.status === 200 || 201) {
+      const res = await addToPlaylist(playlist._id, video, videoDispatch);
+      if (res?.status === 200 || res?.status === 201) {
         toast("Added to playlist!");
       }
     } else {

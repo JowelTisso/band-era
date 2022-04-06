@@ -52,7 +52,7 @@ const Auth = () => {
           email: email,
           password: password,
         });
-        if (status === 200 || 201) {
+        if (status === 200 || status === 201) {
           authDispatch({
             type: LOG_IN,
             payload: {
@@ -79,7 +79,7 @@ const Auth = () => {
           email: email,
           password: password,
         });
-        if (status === 200 || 201) {
+        if (status === 200 || status === 201) {
           authDispatch({
             type: SIGN_UP,
             payload: {
