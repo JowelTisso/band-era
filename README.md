@@ -12,3 +12,5 @@ This is a website for all the folk who enjoyed the music band era where all the 
 - [Playlist](https://band-era.netlify.app/playlist)
 - [Video playing page](https://band-era.netlify.app/videoplayer/Soa3gO7tL-c)
 
+**This site is not mobile responsive**
+
