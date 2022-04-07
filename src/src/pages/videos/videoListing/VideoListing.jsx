@@ -86,7 +86,7 @@ const VideoListing = () => {
         <p className="t3 video-genre">
           {selectedGenre ? selectedGenre : "All"}
         </p>
-        <div className="input-container">
+        <div className="input-container search-container">
           <input
             type="text"
             className="input-simple"
