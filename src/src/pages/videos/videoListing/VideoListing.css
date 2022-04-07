@@ -59,5 +59,6 @@
   background-color: var(--secondary-color-light);
 }
 
-.user-action-section {
+.search-container {
+  margin-left: 15rem;
 }

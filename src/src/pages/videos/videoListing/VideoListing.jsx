@@ -14,6 +14,7 @@ import {
   clearSelectedGenre,
   filterByGenre,
   filterByTitle,
+  sortLatestVideo,
 } from "./helper/videoListingHelper";
 import { useAuth } from "../../../context/provider/AuthProvider";
 import { combinedCategory } from "../../../db/sliderDB";
@@ -85,7 +86,7 @@ const VideoListing = () => {
         <p className="t3 video-genre">
           {selectedGenre ? selectedGenre : "All"}
         </p>
-        <div className="input-container mg-left-6x">
+        <div className="input-container search-container">
           <input
             type="text"
             className="input-simple"
@@ -94,6 +95,15 @@ const VideoListing = () => {
           />
         </div>
         <section className="user-action-section flex">
+          <button
+            className="btn-link btn-all-videos mg-right-5x"
+            onClick={() => {
+              const res = sortLatestVideo(videoState.videos);
+              updateFilteredVideos(res);
+            }}
+          >
+            Latest
+          </button>
           <button
             className="btn-link btn-all-videos"
             onClick={() => {
