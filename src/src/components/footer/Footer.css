@@ -1,5 +1,5 @@
 .footer {
-  height: 30rem;
+  min-height: 30rem;
   width: 100%;
   background-color: #0c121a;
   display: flex;
@@ -7,15 +7,19 @@
   justify-content: flex-start;
   align-items: flex-start;
   padding: 1rem 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 3rem;
 }
 
 .footer-section {
   flex: 1;
+  min-width: 20rem;
+  margin: 0 1rem 1rem 1rem;
 }
 
 .footer-section-title {
-  padding: 1rem 0.5rem;
-  margin-bottom: 1rem;
+  padding: 1rem 0;
+  color: var(--secondary-color-light);
 }
 
 .explore-links {

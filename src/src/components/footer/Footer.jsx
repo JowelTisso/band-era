@@ -13,7 +13,7 @@ import {
 const Footer = () => {
   return (
     <footer className="footer">
-      <section className="footer-section">
+      <section className="footer-section footer-logo">
         <div className="logo-container">
           <img className="logo" src={logo} alt="logo" />
           <p className="t3 mg-left-1x pointer logo-title no-deco">Band Era</p>
@@ -22,7 +22,7 @@ const Footer = () => {
           © 2022. band-era.netlify.app All rights reserved.
         </p>
       </section>
-      <section className="footer-section">
+      <section className="footer-section footer-explore">
         <p className="t4 footer-section-title">Explore</p>
         <div className="explore-links">
           <Link to={"/home"} className="no-deco t4">
@@ -42,7 +42,7 @@ const Footer = () => {
           </Link>
         </div>
       </section>
-      <section className="footer-section">
+      <section className="footer-section footer-company">
         <p className="t4 footer-section-title">Company</p>
         <div>
           <p className="t4 mg-top-1x">Band Era</p>
@@ -52,7 +52,7 @@ const Footer = () => {
           <p className="t4 mg-top-2x">FAQ</p>
         </div>
       </section>
-      <section className="footer-section">
+      <section className="footer-section footer-legal">
         <p className="t4 footer-section-title">Legal</p>
         <div>
           <p className="t4 mg-top-1x">Privacy</p>
@@ -61,7 +61,7 @@ const Footer = () => {
           <p className="t4 mg-top-2x">Complaince Report</p>
         </div>
       </section>
-      <section className="footer-section">
+      <section className="footer-section footer-follow">
         <p className="t4 footer-section-title">Follow Us</p>
         <div className="explore-links">
           <a
