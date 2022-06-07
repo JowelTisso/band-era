@@ -2,16 +2,17 @@
   /* Main */
   --primary-color: #f14b4b;
   --secondary-color: #3c8cf0;
-  --bg-color: #111827;
+  --bg-color: #0b0b0e;
   --txt-color: #e7e7e4;
 
   /* Shades */
   --txt-color-light: #fdfdfc;
   --txt-color-dark: #1c2939;
-  --bg-color-light: #233448;
+  --bg-color-light: #2e3945;
   --bg-color-dark: #0c121a;
   --secondary-color-light: #529af1;
   --secondary-color-dark: #2568bb;
+  /* #1e1e1e */
 }
 
 p,

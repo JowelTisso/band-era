@@ -78,6 +78,7 @@
 @media screen and (max-width: 768px) {
   .login-card {
     width: 100%;
+    min-height: 90vh;
   }
 
   .alert {
