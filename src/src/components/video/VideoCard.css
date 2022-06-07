@@ -1,7 +1,6 @@
 .video-card {
   display: flex;
   flex-direction: column;
-  width: 24rem;
 }
 
 .video-card:hover {
@@ -10,15 +9,16 @@
 }
 
 .video-thumb {
-  height: 15rem;
-  width: 24rem;
+  height: auto;
+  max-width: 100%;
   object-fit: cover;
   border-radius: 5px;
 }
 
 .video-title {
   line-height: 2rem;
-  height: 4rem;
+  height: 6rem;
+  overflow: hidden;
 }
 
 .video-info-container {
