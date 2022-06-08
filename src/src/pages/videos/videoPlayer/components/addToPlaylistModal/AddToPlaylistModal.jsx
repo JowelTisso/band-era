@@ -72,7 +72,7 @@ const AddToPlaylistModal = ({ toggleModal, selectedVideo }) => {
                   }
                 />
               </div>
-              <div className="input-container fw-1x mg-top-2x">
+              {/* <div className="input-container fw-1x mg-top-2x">
                 <label className="input-label">Description</label>
                 <input
                   type="text"
@@ -85,7 +85,7 @@ const AddToPlaylistModal = ({ toggleModal, selectedVideo }) => {
                     }))
                   }
                 />
-              </div>
+              </div> */}
             </>
           ) : videoState.playlist.length > 0 ? (
             videoState.playlist.map((item) => (

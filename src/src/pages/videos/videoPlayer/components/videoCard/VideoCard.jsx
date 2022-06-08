@@ -3,7 +3,7 @@ import "./VideoCard.css";
 
 const VideoCard = ({ title, thumbnail, artist, views, created }) => {
   return (
-    <div className="mg-top-1x">
+    <div className="mg-top-1x video-player-card">
       <div className="card card-horizontal">
         <img className="card-img-horizontal" src={thumbnail} alt="card" />
         <div className="card-content-horizontal">
