@@ -32,10 +32,6 @@
   left: 5rem;
 }
 
-.menu-backdrop {
-  background: transparent;
-}
-
 .menu-content {
   background-color: var(--bg-color-light);
   border-radius: 5px;
@@ -101,8 +97,8 @@
   }
 
   .category-menu-container {
-    position: absolute;
-    top: 10rem;
+    position: fixed;
+    top: 3rem;
     left: 0;
     bottom: 0;
     background-color: var(--bg-color-dark);

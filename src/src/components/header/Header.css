@@ -68,7 +68,7 @@
     margin-left: -30rem;
     padding: 3rem 0;
     transition: all 0.5s ease;
-    z-index: 2;
+    z-index: 4;
   }
 
   .header-middle .btn-link {
@@ -95,21 +95,17 @@
   }
 
   .menu-backdrop {
-    position: absolute;
-    top: 6rem;
+    position: fixed;
+    top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: 1;
     width: 100%;
-    height: 95vh;
     visibility: hidden;
   }
 
   .show-backdrop {
     visibility: visible;
   }
-}
-
-@media screen and (max-width: 768px) {
 }
