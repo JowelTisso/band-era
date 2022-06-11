@@ -1,5 +1,6 @@
-.remove-badge-container {
+.watchlater-wrapper .remove-badge-container {
   position: relative;
+  width: 25%;
 }
 
 .remove-badge {
@@ -11,4 +12,26 @@
 
 .remove-badge:hover {
   opacity: 0.7;
+}
+
+@media screen and (max-width: 900px) {
+  .watchlater-wrapper .remove-badge-container {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .watchlater-wrapper .remove-badge-container {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .watchlater-wrapper {
+    padding: 1.5rem;
+  }
+
+  .watchlater-wrapper .remove-badge-container {
+    width: 100%;
+  }
 }

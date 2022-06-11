@@ -48,6 +48,7 @@ const Header = () => {
           to={"/"}
           className="btn-link nav-link-hover btn-sm no-deco mg-right-2x"
           style={activeLinkStyle}
+          onClick={toggleMenu}
         >
           Home
         </NavLink>
@@ -55,6 +56,7 @@ const Header = () => {
           to={"/videos"}
           className="btn-link nav-link-hover btn-sm no-deco mg-right-2x"
           style={activeLinkStyle}
+          onClick={toggleMenu}
         >
           <div onClick={clearSelectedGenre}>Videos</div>
         </NavLink>
@@ -62,6 +64,7 @@ const Header = () => {
           to={"/watchlater"}
           className="btn-link nav-link-hover btn-sm no-deco mg-right-2x"
           style={activeLinkStyle}
+          onClick={toggleMenu}
         >
           Watch Later
         </NavLink>
@@ -69,6 +72,7 @@ const Header = () => {
           to={"/playlist"}
           className="btn-link nav-link-hover btn-sm no-deco mg-right-2x"
           style={activeLinkStyle}
+          onClick={toggleMenu}
         >
           Playlist
         </NavLink>
@@ -76,6 +80,7 @@ const Header = () => {
           to={"/history"}
           className="btn-link nav-link-hover btn-sm no-deco mg-right-2x"
           style={activeLinkStyle}
+          onClick={toggleMenu}
         >
           History
         </NavLink>

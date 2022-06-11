@@ -16,7 +16,7 @@ const WatchLater = () => {
     removeFromWatchLater(authState, selectedVideo, videoDispatch, navigate);
   };
   return (
-    <div className="main-wrapper">
+    <div className="main-wrapper watchlater-wrapper">
       <div className="video-listing-header">
         <p className="t3 video-genre">
           You have {videoState.watchLater?.length} videos in watch later
