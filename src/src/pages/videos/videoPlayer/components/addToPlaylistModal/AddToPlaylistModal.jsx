@@ -10,17 +10,15 @@ import { callToast } from "../../../../../components/toast/Toast";
 const AddToPlaylistModal = ({ toggleModal, selectedVideo }) => {
   const [newPlaylistInfo, setNewPlaylistInfo] = useState({
     title: "",
-    description: "",
   });
   const { videoState, videoDispatch } = useVideo();
   const [isAddMode, setIsAddMode] = useState(false);
 
   const saveHandler = async () => {
-    if (newPlaylistInfo.title && newPlaylistInfo.description) {
+    if (newPlaylistInfo.title) {
       const res = await createPlaylist(
         {
           title: newPlaylistInfo.title,
-          description: newPlaylistInfo.description,
         },
         videoDispatch
       );
@@ -57,36 +55,20 @@ const AddToPlaylistModal = ({ toggleModal, selectedVideo }) => {
 
         <section className="modal-list-container mg-top-1x">
           {isAddMode ? (
-            <>
-              <div className="input-container mg-top-2x">
-                <label className="input-label fw-1x">Name</label>
-                <input
-                  type="text"
-                  className="input-simple"
-                  placeholder="Pop list"
-                  onChange={({ target }) =>
-                    setNewPlaylistInfo((state) => ({
-                      ...state,
-                      title: target.value,
-                    }))
-                  }
-                />
-              </div>
-              {/* <div className="input-container fw-1x mg-top-2x">
-                <label className="input-label">Description</label>
-                <input
-                  type="text"
-                  className="input-simple"
-                  placeholder="Evergreen songs"
-                  onChange={({ target }) =>
-                    setNewPlaylistInfo((state) => ({
-                      ...state,
-                      description: target.value,
-                    }))
-                  }
-                />
-              </div> */}
-            </>
+            <div className="input-container mg-top-2x">
+              <label className="input-label fw-1x">Name</label>
+              <input
+                type="text"
+                className="input-simple"
+                placeholder="Pop list"
+                onChange={({ target }) =>
+                  setNewPlaylistInfo((state) => ({
+                    ...state,
+                    title: target.value,
+                  }))
+                }
+              />
+            </div>
           ) : videoState.playlist.length > 0 ? (
             videoState.playlist.map((item) => (
               <p

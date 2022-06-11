@@ -23,6 +23,10 @@ svg {
   color: var(--txt-color);
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .App {
   background-color: var(--bg-color);
 }

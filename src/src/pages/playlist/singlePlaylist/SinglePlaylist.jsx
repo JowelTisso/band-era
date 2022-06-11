@@ -21,7 +21,7 @@ const SinglePlaylist = () => {
   }, [videoState.playlist, playlistId]);
 
   return (
-    <div className="main-wrapper">
+    <div className="main-wrapper single-playlist-wrapper">
       <div className="video-listing-header">
         <p className="t3 video-genre">
           You have {playlistVideos.length} videos
@@ -31,7 +31,10 @@ const SinglePlaylist = () => {
         {playlistVideos.length > 0 ? (
           playlistVideos.map((data) => (
             <div className="remove-badge-container" key={data._id}>
-              <Link to={`/videoplayer/${data.videoId}`} className="no-deco">
+              <Link
+                to={`/videoplayer/${data.videoId}`}
+                className="no-deco history-card-link"
+              >
                 <HistoryCard {...data} data={data} />
               </Link>
               <span className="history-icon-container flex">

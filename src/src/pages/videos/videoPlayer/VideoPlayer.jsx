@@ -11,6 +11,7 @@ import {
   addToWatchLater,
   removeLikeFromVideo,
 } from "./helper/videoActionHelper";
+import { addToHistory } from "../videoListing/helper/videoListingHelper";
 
 const VideoPlayer = () => {
   const { videoId } = useParams();
@@ -45,6 +46,13 @@ const VideoPlayer = () => {
 
   const toggleModal = () => {
     authState.loggedIn ? setIsModal((state) => !state) : navigate("/auth");
+  };
+
+  const historyHandler = (selectedVideo) => {
+    const inHistory = videoState?.history.some(
+      (item) => item.videoId === selectedVideo.videoId
+    );
+    !inHistory && addToHistory(authState, selectedVideo, videoDispatch);
   };
 
   useEffect(() => {
@@ -108,7 +116,10 @@ const VideoPlayer = () => {
               key={item.id}
               to={`/videoplayer/${item.videoId}`}
               className="no-deco pointer video-card-link"
-              onClick={() => setSelectedVideo(item)}
+              onClick={() => {
+                setSelectedVideo(item);
+                historyHandler(item);
+              }}
             >
               <VideoCard {...item} />
             </Link>
