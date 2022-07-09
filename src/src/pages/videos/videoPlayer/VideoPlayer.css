@@ -24,7 +24,70 @@
   gap: 2rem;
 }
 
+<<<<<<< Updated upstream
+=======
+.video-frame {
+  height: 48rem;
+  width: 100%;
+}
+
+>>>>>>> Stashed changes
 /* Utils */
 .flex {
   display: flex;
 }
+<<<<<<< Updated upstream
+=======
+
+@media screen and (max-width: 1024px) {
+  .video-playlist {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .videoplayer-wrapper {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .video-frame {
+    height: 32rem;
+    width: 100%;
+  }
+
+  .video-playlist {
+    width: 95%;
+    margin-bottom: 2rem;
+  }
+
+  .video-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .video-playlist .video-card-link {
+    width: 33%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .video-playlist .video-card-link {
+    width: 50%;
+  }
+
+  .video-frame {
+    height: 24rem;
+    width: 100%;
+  }
+
+  .video-detail-header {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .video-user-action {
+    margin-top: 5px;
+  }
+}
+>>>>>>> Stashed changes

@@ -67,6 +67,7 @@ const VideoListing = () => {
           All videos
         </button>
       </div>
+<<<<<<< Updated upstream
       <main className="videos-container pd-top-1x">
         {videoState.videos.map((data) => (
           <Link
@@ -75,6 +76,42 @@ const VideoListing = () => {
             className="no-deco"
           >
             <div onClick={() => historyHandler(data)}>
+=======
+      <section className="content-container">
+        <nav
+          className={`category-menu-container mg-top-3x ${
+            isCategoryMenuVisible && "show-category-menu"
+          }`}
+        >
+          <p className="t3 fw-1x mg-bottom-4x">Select category</p>
+          {combinedCategory.map((item) => (
+            <button
+              className="t4 mg-top-3x pointer category-item"
+              key={item._id}
+              onClick={() => {
+                changeGenre(item.subCategoryName);
+                toggleCategoryMenu();
+              }}
+            >
+              {item.subCategoryName}
+            </button>
+          ))}
+        </nav>
+        <div
+          className={`menu-backdrop ${
+            isCategoryMenuVisible && "show-backdrop"
+          }`}
+          onClick={toggleCategoryMenu}
+        ></div>
+        <main className="videos-container pd-top-4x">
+          {filteredVideos.map((data) => (
+            <Link
+              to={`/videoplayer/${data.videoId}`}
+              key={data._id}
+              className="no-deco video-card-link"
+              onClick={() => historyHandler(data)}
+            >
+>>>>>>> Stashed changes
               <VideoCard {...data} />
             </div>
           </Link>

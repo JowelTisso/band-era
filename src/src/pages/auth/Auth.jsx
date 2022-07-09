@@ -12,8 +12,8 @@ const Auth = () => {
   const [credentials, setCredentials] = useState({
     firstName: "",
     lastName: "",
-    email: "test@gmail.com",
-    password: "test123",
+    email: "",
+    password: "",
   });
   const [togglePassword, setTogglePassword] = useState(false);
 
@@ -108,11 +108,20 @@ const Auth = () => {
   };
 
   const fillTestCredentials = () => {
-    setCredentials((state) => ({
-      ...state,
-      email: "test@gmail.com",
-      password: "test123",
-    }));
+    if (authTypeIsLogin) {
+      setCredentials((state) => ({
+        ...state,
+        email: "jowel@gmail.com",
+        password: "jowel123",
+      }));
+    } else {
+      setCredentials({
+        firstName: "John",
+        lastName: "Doe",
+        email: "john@gmail.com",
+        password: "john123",
+      });
+    }
   };
 
   return (
@@ -190,48 +199,34 @@ const Auth = () => {
           </div>
         </div>
 
-        <div className="info-container flex-center mg-2x">
-          <div>
-            <input type="checkbox" className="checkbox" />
-            <label className="t4 mg-left-1x">
-              {authTypeIsLogin
-                ? "Remember me"
-                : "I accept all Terms and Conditions"}
-            </label>
-          </div>
-          {authTypeIsLogin && (
-            <button className="btn-link btn-link-secondary t4">
-              Forgot your password?
-            </button>
-          )}
-        </div>
-
         <button
-          className="btn btn-primary wd-full mg-top-2x"
+          className="btn btn-primary wd-full mg-top-5x"
           onClick={() => {
             authTypeIsLogin ? loginHandler() : signupHandler();
           }}
         >
-          {authTypeIsLogin ? "Login" : "Create New Account"}
+          {authTypeIsLogin ? "Login" : "Create new account"}
         </button>
 
-        <div className="bottom-nav-container mg-top-4x ">
+        <div className="bottom-nav-container mg-top-5x">
           <button
-            className="t4 text-center pointer no-deco btn-link btn-link-secondary mg-right-1x mg-left-2x"
-            onClick={changeAuthType}
-          >
-            {authTypeIsLogin ? "Create New Account" : "Already have an account"}
-          </button>
-          <IoChevronForward className="goto-icon" />
-        </div>
-        {authTypeIsLogin && (
-          <button
-            className="t4 text-center pointer no-deco btn-link btn-link-secondary mg-top-2x"
+            className="t4 text-center pointer no-deco btn-link btn-link-secondary "
             onClick={fillTestCredentials}
           >
             Fill test credentials
           </button>
-        )}
+          <span className="bottom-right-btn flex-center">
+            <button
+              className="t4 text-center pointer no-deco btn-link btn-link-secondary mg-right-1x mg-left-2x"
+              onClick={changeAuthType}
+            >
+              {authTypeIsLogin
+                ? "Create new account"
+                : "Already have an account"}
+            </button>
+            <IoChevronForward className="goto-icon" />
+          </span>
+        </div>
       </div>
     </div>
   );
