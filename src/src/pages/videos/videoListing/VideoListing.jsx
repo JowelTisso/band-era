@@ -18,12 +18,15 @@ import {
 } from "./helper/videoListingHelper";
 import { useAuth } from "../../../context/provider/AuthProvider";
 import { combinedCategory } from "../../../db/sliderDB";
+import { IoSearch } from "react-icons/io5";
 
 const VideoListing = () => {
   const { videoState, videoDispatch } = useVideo();
   const { selectedGenre } = videoState;
   const { authState } = useAuth();
   const [filteredVideos, setFilteredVideos] = useState([]);
+  const [isCategoryMenuVisible, setIsCategoryMenuVisible] = useState(false);
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
 
   const historyHandler = (selectedVideo) => {
     const inHistory = videoState?.history.some(
@@ -48,6 +51,14 @@ const VideoListing = () => {
     if (e.key === "Enter") {
       filterByTitle(e.target.value, videoState.videos, updateFilteredVideos);
     }
+  };
+
+  const toggleCategoryMenu = () => {
+    setIsCategoryMenuVisible((isVisible) => !isVisible);
+  };
+
+  const toggleSearch = () => {
+    setIsSearchVisible((isVisible) => !isVisible);
   };
 
   useEffect(() => {
@@ -81,12 +92,19 @@ const VideoListing = () => {
   }, []);
 
   return (
-    <div className="main-wrapper">
+    <div className="main-wrapper video-listing-wrapper">
       <div className="video-listing-header">
-        <p className="t3 video-genre">
+        <p className="t3 video-genre" onClick={toggleCategoryMenu}>
           {selectedGenre ? selectedGenre : "All"}
         </p>
-        <div className="input-container search-container">
+        <button className="flex-center search-icon" onClick={toggleSearch}>
+          <IoSearch className="t3" />
+        </button>
+        <div
+          className={`input-container search-container ${
+            isSearchVisible && "show-search"
+          }`}
+        >
           <input
             type="text"
             className="input-simple"
@@ -94,9 +112,13 @@ const VideoListing = () => {
             onKeyUp={searchVideo}
           />
         </div>
+        <div
+          className={`menu-backdrop ${isSearchVisible && "show-backdrop"}`}
+          onClick={toggleSearch}
+        ></div>
         <section className="user-action-section flex">
           <button
-            className="btn-link btn-all-videos mg-right-5x"
+            className="btn-link btn-all-videos"
             onClick={() => {
               const res = sortLatestVideo(videoState.videos);
               updateFilteredVideos(res);
@@ -116,28 +138,37 @@ const VideoListing = () => {
         </section>
       </div>
       <section className="content-container">
-        <div className="category-menu-container mg-top-3x">
+        <nav
+          className={`category-menu-container mg-top-3x ${
+            isCategoryMenuVisible && "show-category-menu"
+          }`}
+        >
           <p className="t3 fw-1x mg-bottom-4x">Select category</p>
           {combinedCategory.map((item) => (
-            <p
+            <button
               className="t4 mg-top-3x pointer category-item"
               key={item._id}
               onClick={() => changeGenre(item.subCategoryName)}
             >
               {item.subCategoryName}
-            </p>
+            </button>
           ))}
-        </div>
+        </nav>
+        <div
+          className={`menu-backdrop ${
+            isCategoryMenuVisible && "show-backdrop"
+          }`}
+          onClick={toggleCategoryMenu}
+        ></div>
         <main className="videos-container pd-top-4x">
           {filteredVideos.map((data) => (
             <Link
               to={`/videoplayer/${data.videoId}`}
               key={data._id}
-              className="no-deco"
+              className="no-deco video-card-link"
+              onClick={() => historyHandler(data)}
             >
-              <div onClick={() => historyHandler(data)}>
-                <VideoCard {...data} />
-              </div>
+              <VideoCard {...data} />
             </Link>
           ))}
         </main>

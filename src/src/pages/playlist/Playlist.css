@@ -1,10 +1,47 @@
 .playlist-card-container {
   position: relative;
-  width: 35rem;
+  width: 31%;
 }
 
 .playlist-container {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+}
+
+.playlist-card-container .card {
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .playlist-card-container {
+    width: 47%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .playlist-card-container {
+    width: 100%;
+  }
+
+  .playlist-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .playlist-card-container .card {
+    margin: 2rem 0 0 0;
+  }
+
+  .playlist-card-container .history-icon-container {
+    top: 1.5rem;
+    right: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .video-listing-header .t3,
+  .btn-link {
+    font-size: 1.6rem;
+  }
 }

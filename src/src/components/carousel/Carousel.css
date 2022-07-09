@@ -39,3 +39,23 @@
   bottom: 5%;
   left: 45%;
 }
+
+@media screen and (max-width: 768px) {
+  .carousel-container {
+    height: 32rem;
+  }
+
+  .carousel-img {
+    height: 32rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .carousel-container {
+    height: 25rem;
+  }
+
+  .carousel-img {
+    height: 25rem;
+  }
+}

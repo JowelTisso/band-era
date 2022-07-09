@@ -21,12 +21,13 @@ const History = () => {
     !inWatchLater &&
       addToWatchLater(authState, selectedVideo, videoDispatch, navigate);
   };
+
   const historyHandler = (selectedVideo) => {
     removeFromHistory(authState, selectedVideo, videoDispatch, navigate);
   };
 
   return (
-    <div className="main-wrapper">
+    <div className="main-wrapper history-wrapper">
       <div className="video-listing-header">
         <p className="t3 video-genre">
           You have watched {videoState.history?.length} videos
@@ -38,10 +39,13 @@ const History = () => {
           Clear History
         </button>
       </div>
-      <main className="videos-container pd-top-2x">
+      <main className="videos-container pd-top-2x ">
         {videoState.history.map((data) => (
           <div className="remove-badge-container" key={data._id}>
-            <Link to={`/videoplayer/${data.videoId}`} className="no-deco">
+            <Link
+              to={`/videoplayer/${data.videoId}`}
+              className="no-deco history-card-link"
+            >
               <HistoryCard {...data} data={data} />
             </Link>
             <span className="history-icon-container flex">

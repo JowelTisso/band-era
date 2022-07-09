@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
-import { IoLogOutOutline } from "react-icons/io5";
 import logo from "../../assets/logo.png";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { activeLinkStyle } from "./HeaderStyles";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/provider/AuthProvider";
 import { userLogout } from "../../pages/auth/helper/authHelper";
 import { useVideo } from "../../context/provider/VideoProvider";
 import { CHANGE_GENRE } from "../../utils/Constants";
+import { IoMenu } from "react-icons/io5";
 
 const Header = () => {
+  const [isMenuVisivle, setIsMenuVisivle] = useState(false);
   const { authState, authDispatch } = useAuth();
   const navigate = useNavigate();
   const { videoDispatch } = useVideo();
+  const location = useLocation();
+  const isAuth = location.pathname === "/auth";
 
   const logoutHandler = () => {
     userLogout(authDispatch);
@@ -23,6 +25,16 @@ const Header = () => {
     videoDispatch({ type: CHANGE_GENRE, payload: "" });
   };
 
+  const activeLink = {
+    borderBottom: "2px solid #e7e7e4",
+  };
+
+  const activeLinkStyle = ({ isActive }) => (isActive ? activeLink : undefined);
+
+  const toggleMenu = () => {
+    setIsMenuVisivle((isVisible) => !isVisible);
+  };
+
   return (
     <header className="header-container pd-1x pd-right-3x pd-left-2x">
       <div className="logo-container">
@@ -31,11 +43,12 @@ const Header = () => {
           Band Era
         </Link>
       </div>
-      <div className="header-middle">
+      <nav className={`header-middle ${isMenuVisivle && "show-sidenav"}`}>
         <NavLink
           to={"/"}
           className="btn-link nav-link-hover btn-sm no-deco mg-right-2x"
           style={activeLinkStyle}
+          onClick={toggleMenu}
         >
           Home
         </NavLink>
@@ -43,6 +56,7 @@ const Header = () => {
           to={"/videos"}
           className="btn-link nav-link-hover btn-sm no-deco mg-right-2x"
           style={activeLinkStyle}
+          onClick={toggleMenu}
         >
           <div onClick={clearSelectedGenre}>Videos</div>
         </NavLink>
@@ -50,6 +64,7 @@ const Header = () => {
           to={"/watchlater"}
           className="btn-link nav-link-hover btn-sm no-deco mg-right-2x"
           style={activeLinkStyle}
+          onClick={toggleMenu}
         >
           Watch Later
         </NavLink>
@@ -57,6 +72,7 @@ const Header = () => {
           to={"/playlist"}
           className="btn-link nav-link-hover btn-sm no-deco mg-right-2x"
           style={activeLinkStyle}
+          onClick={toggleMenu}
         >
           Playlist
         </NavLink>
@@ -64,32 +80,36 @@ const Header = () => {
           to={"/history"}
           className="btn-link nav-link-hover btn-sm no-deco mg-right-2x"
           style={activeLinkStyle}
+          onClick={toggleMenu}
         >
           History
         </NavLink>
-      </div>
+      </nav>
+      <div
+        className={`menu-backdrop ${isMenuVisivle && "show-backdrop"}`}
+        onClick={toggleMenu}
+      ></div>
       <nav className="nav-container">
-        {authState.loggedIn ? (
-          <button
-            className="btn btn-secondary btn-sm no-deco btn-login"
-            onClick={logoutHandler}
-          >
-            Logout
-          </button>
-        ) : (
-          <Link
-            to={"/auth"}
-            className="btn btn-primary btn-sm no-deco btn-login"
-          >
-            Login
-          </Link>
-        )}
+        {!isAuth &&
+          (authState.loggedIn ? (
+            <button
+              className="btn btn-secondary btn-sm no-deco btn-login"
+              onClick={logoutHandler}
+            >
+              Logout
+            </button>
+          ) : (
+            <Link
+              to={"/auth"}
+              className="btn btn-primary btn-sm no-deco btn-login"
+            >
+              Login
+            </Link>
+          ))}
 
-        {authState.loggedIn && (
-          <div className="pointer login-icon">
-            <IoLogOutOutline className="ic-normal" />
-          </div>
-        )}
+        <button className="pointer menu-icon flex-center" onClick={toggleMenu}>
+          <IoMenu className="t3" />
+        </button>
       </nav>
     </header>
   );

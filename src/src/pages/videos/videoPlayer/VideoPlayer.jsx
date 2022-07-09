@@ -11,6 +11,7 @@ import {
   addToWatchLater,
   removeLikeFromVideo,
 } from "./helper/videoActionHelper";
+import { addToHistory } from "../videoListing/helper/videoListingHelper";
 
 const VideoPlayer = () => {
   const { videoId } = useParams();
@@ -47,6 +48,13 @@ const VideoPlayer = () => {
     authState.loggedIn ? setIsModal((state) => !state) : navigate("/auth");
   };
 
+  const historyHandler = (selectedVideo) => {
+    const inHistory = videoState?.history.some(
+      (item) => item.videoId === selectedVideo.videoId
+    );
+    !inHistory && addToHistory(authState, selectedVideo, videoDispatch);
+  };
+
   useEffect(() => {
     (() => {
       const video = videoState.videos.find((item) => {
@@ -62,8 +70,7 @@ const VideoPlayer = () => {
     <div className="videoplayer-wrapper">
       <main className="video-player">
         <iframe
-          width="853"
-          height="480"
+          className="video-frame"
           src={`https://www.youtube.com/embed/${videoId}`}
           title="YouTube video player"
           frameBorder="0"
@@ -103,17 +110,21 @@ const VideoPlayer = () => {
       </main>
       <section className="video-playlist mg-top-1x mg-left-2x">
         <p className="t4">More videos</p>
-        {videos.map((item) => (
-          <div
-            className="pointer"
-            onClick={() => setSelectedVideo(item)}
-            key={item.id}
-          >
-            <Link to={`/videoplayer/${item.videoId}`} className="no-deco">
+        <ul className="video-list">
+          {videos.map((item) => (
+            <Link
+              key={item.id}
+              to={`/videoplayer/${item.videoId}`}
+              className="no-deco pointer video-card-link"
+              onClick={() => {
+                setSelectedVideo(item);
+                historyHandler(item);
+              }}
+            >
               <VideoCard {...item} />
             </Link>
-          </div>
-        ))}
+          ))}
+        </ul>
       </section>
       {isModal && (
         <AddToPlaylistModal

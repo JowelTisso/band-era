@@ -1,1 +1,21 @@
+.remove-badge-container {
+  width: 45%;
+}
 
+@media screen and (max-width: 1100px) {
+  .remove-badge-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .remove-badge-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .history-wrapper {
+    padding: 1.5rem;
+  }
+}

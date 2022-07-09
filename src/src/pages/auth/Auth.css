@@ -69,13 +69,16 @@
   color: var(--txt-color);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1024px) {
+  .login-card {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .login-card {
     width: 100%;
-  }
-
-  .wd-4x {
-    width: 100%;
+    min-height: 90vh;
   }
 
   .alert {

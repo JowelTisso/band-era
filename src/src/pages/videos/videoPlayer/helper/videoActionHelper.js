@@ -1,3 +1,4 @@
+import { callToast } from "../../../../components/toast/Toast";
 import { DELETE, POST } from "../../../../utils/axiosHelper";
 import {
   LIKES_API,
@@ -57,6 +58,7 @@ export const addToWatchLater = async (
         type: UPDATE_WATCH_LATER,
         payload: { watchLater: res?.data.watchlater },
       });
+      callToast("Added to watch later!");
     }
   } else {
     navigate("/auth");

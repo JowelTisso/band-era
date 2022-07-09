@@ -8,12 +8,13 @@
 
 .video-genre {
   border-left: 3px solid var(--secondary-color);
-  padding-left: 1rem;
+  padding: 2px 1rem;
 }
 
 .video-listing-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .btn-all-videos {
@@ -29,10 +30,6 @@
   position: absolute;
   top: 18%;
   left: 5rem;
-}
-
-.menu-backdrop {
-  background: transparent;
 }
 
 .menu-content {
@@ -53,6 +50,12 @@
 .category-item {
   padding: 0.5rem 1rem;
   border-radius: 5px;
+  background: transparent;
+  border: none;
+  color: var(--txt-color);
+  display: block;
+  width: 100%;
+  text-align: start;
 }
 
 .category-item:hover {
@@ -61,4 +64,113 @@
 
 .search-container {
   margin-left: 15rem;
+}
+
+.video-card-link {
+  width: 20%;
+}
+
+.search-icon {
+  display: none;
+  background: none;
+  border: none;
+}
+
+.user-action-section {
+  gap: 2rem;
+}
+
+@media screen and (max-width: 1089px) {
+  .video-card-link {
+    width: 27%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .videos-container {
+    padding-left: 0;
+  }
+
+  .input-container {
+    margin-left: 0;
+    width: 25rem;
+  }
+
+  .category-menu-container {
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    bottom: 0;
+    background-color: var(--bg-color-dark);
+    padding: 1rem 2rem;
+    min-width: 25rem;
+    margin-left: -25rem;
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+
+  .show-category-menu {
+    margin-left: 0;
+  }
+
+  .video-genre:active {
+    background-color: var(--bg-color-light);
+  }
+
+  .video-card-link {
+    width: 29%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .search-container {
+    visibility: hidden;
+    position: absolute;
+    top: 12rem;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: auto;
+    z-index: 2;
+  }
+
+  .show-search {
+    visibility: visible;
+  }
+
+  .search-icon {
+    display: flex;
+    margin-left: auto;
+    padding: 5px;
+  }
+
+  .search-icon:active {
+    background-color: var(--bg-color-light);
+  }
+
+  .user-action-section {
+    gap: 1rem;
+    margin-left: 2rem;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .videos-container {
+    gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .video-card-link {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .videos-container {
+    gap: 2rem;
+  }
+  .video-listing-wrapper {
+    padding: 10px;
+  }
 }

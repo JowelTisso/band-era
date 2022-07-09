@@ -30,7 +30,7 @@ const Playlist = () => {
           Create new playlist
         </button>
       </div>
-      <main className="playlist-container pd-top-1x pd-left-6x">
+      <main className="playlist-container pd-top-1x pd-left-5x pd-right-6x">
         {videoState.playlist.map((data) => (
           <div className="playlist-card-container" key={data._id}>
             <Link to={`/single-playlist/${data._id}`} className="no-deco">

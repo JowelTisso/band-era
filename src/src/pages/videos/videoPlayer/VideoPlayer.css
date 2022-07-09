@@ -7,11 +7,11 @@
 
 .video-player {
   margin: 1rem;
+  flex: 1;
 }
 
 .video-playlist {
   height: 73vh;
-  flex: 1;
   overflow: hidden;
   overflow-y: auto;
 }
@@ -24,7 +24,64 @@
   gap: 2rem;
 }
 
+.video-frame {
+  height: 480px;
+  width: 100%;
+}
+
 /* Utils */
 .flex {
   display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+  .video-playlist {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .videoplayer-wrapper {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .video-frame {
+    height: 320px;
+    width: 100%;
+  }
+
+  .video-playlist {
+    width: 95%;
+    margin-bottom: 2rem;
+  }
+
+  .video-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .video-playlist .video-card-link {
+    width: 33%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .video-playlist .video-card-link {
+    width: 50%;
+  }
+
+  .video-frame {
+    height: 240px;
+    width: 100%;
+  }
+
+  .video-detail-header {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .video-user-action {
+    margin-top: 5px;
+  }
 }

@@ -2,9 +2,9 @@
   background-color: var(--bg-color-light);
   border: none;
   padding: 1.5rem 2rem;
-  width: 35rem;
+  min-width: 100%;
 }
 
 .card-sub-title {
-  margin-top: 2px;
+  margin-top: 5px;
 }

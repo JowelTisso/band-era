@@ -18,3 +18,31 @@
 .card-content {
   padding: 0;
 }
+
+@media screen and (max-width: 1024px) {
+  .video-player-card {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .video-player-card .card {
+    width: 100%;
+  }
+
+  .video-player-card .card-horizontal {
+    flex-direction: column;
+    height: 100%;
+    min-width: min-content;
+    gap: 2rem;
+  }
+
+  .video-player-card .card-img-horizontal {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .video-player-card {
+    width: 100%;
+  }
+}
