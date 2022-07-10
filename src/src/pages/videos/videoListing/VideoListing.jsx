@@ -100,42 +100,6 @@ const VideoListing = () => {
         <button className="flex-center search-icon" onClick={toggleSearch}>
           <IoSearch className="t3" />
         </button>
-        <div
-          className={`input-container search-container ${
-            isSearchVisible && "show-search"
-          }`}
-        >
-          <input
-            type="text"
-            className="input-simple"
-            placeholder="Search"
-            onKeyUp={searchVideo}
-          />
-        </div>
-        <div
-          className={`menu-backdrop ${isSearchVisible && "show-backdrop"}`}
-          onClick={toggleSearch}
-        ></div>
-        <section className="user-action-section flex">
-          <button
-            className="btn-link btn-all-videos"
-            onClick={() => {
-              const res = sortLatestVideo(videoState.videos);
-              updateFilteredVideos(res);
-            }}
-          >
-            Latest
-          </button>
-          <button
-            className="btn-link btn-all-videos"
-            onClick={() => {
-              clearSelectedGenre(videoState, videoDispatch);
-              updateFilteredVideos(videoState.videos);
-            }}
-          >
-            All videos
-          </button>
-        </section>
       </div>
       <section className="content-container">
         <nav
@@ -148,7 +112,10 @@ const VideoListing = () => {
             <button
               className="t4 mg-top-3x pointer category-item"
               key={item._id}
-              onClick={() => changeGenre(item.subCategoryName)}
+              onClick={() => {
+                changeGenre(item.subCategoryName);
+                toggleCategoryMenu();
+              }}
             >
               {item.subCategoryName}
             </button>

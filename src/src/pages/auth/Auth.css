@@ -47,6 +47,8 @@
 .bottom-nav-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 38rem;
 }
 
 .goto-icon {

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { callToast } from "../components/toast/Toast";
 import { getUserToken } from "./tokenHelper";
 
 export const GET = async (url, auth = false) => {
@@ -36,6 +37,9 @@ export const POST_AUTH = async (url, body) => {
     return await axios.post(url, body);
   } catch (err) {
     console.log(err);
+    if (err?.response) {
+      callToast(err?.response.data.errors[0]);
+    }
   }
 };
 
