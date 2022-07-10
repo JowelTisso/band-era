@@ -35,7 +35,7 @@ const Carousel = () => {
 
   return (
     <div className="carousel-container">
-      <div className="pointer">
+      <div>
         <img
           className="carousel-img"
           src={carouselState?.data?.img}

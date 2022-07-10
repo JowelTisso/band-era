@@ -97,7 +97,7 @@ const VideoPlayer = () => {
                 </div>
               )}
               <p className="t4 fw-1x pointer" onClick={watchLaterHandler}>
-                {inWatchLater ? "Added" : "Watch Later"}
+                {inWatchLater ? "Added to watch later" : "Watch Later"}
               </p>
               <p className="t4 fw-1x pointer" onClick={toggleModal}>
                 Add to Playlist

@@ -72,7 +72,7 @@ const Recommended = {
     },
     {
       _id: uuid(),
-      subCategoryName: "Rock",
+      subCategoryName: "Country",
       subCategoryImg:
         "https://i.ytimg.com/vi/HKtsdZs9LJo/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJn9hkILK8M6oA62gEPVbJPKhm0w",
     },

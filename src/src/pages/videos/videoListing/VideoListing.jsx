@@ -19,6 +19,7 @@ import {
 import { useAuth } from "../../../context/provider/AuthProvider";
 import { combinedCategory } from "../../../db/sliderDB";
 import { IoSearch } from "react-icons/io5";
+import { debounce } from "../../../utils/debounce";
 
 const VideoListing = () => {
   const { videoState, videoDispatch } = useVideo();
@@ -48,10 +49,10 @@ const VideoListing = () => {
   };
 
   const searchVideo = (e) => {
-    if (e.key === "Enter") {
-      filterByTitle(e.target.value, videoState.videos, updateFilteredVideos);
-    }
+    filterByTitle(e.target.value, videoState.videos, updateFilteredVideos);
   };
+
+  const debouncedSearch = debounce(searchVideo, 500);
 
   const toggleCategoryMenu = () => {
     setIsCategoryMenuVisible((isVisible) => !isVisible);
@@ -109,7 +110,7 @@ const VideoListing = () => {
             type="text"
             className="input-simple"
             placeholder="Search"
-            onKeyUp={searchVideo}
+            onChange={debouncedSearch}
           />
         </div>
         <div
@@ -148,7 +149,10 @@ const VideoListing = () => {
             <button
               className="t4 mg-top-3x pointer category-item"
               key={item._id}
-              onClick={() => changeGenre(item.subCategoryName)}
+              onClick={() => {
+                changeGenre(item.subCategoryName);
+                toggleCategoryMenu();
+              }}
             >
               {item.subCategoryName}
             </button>

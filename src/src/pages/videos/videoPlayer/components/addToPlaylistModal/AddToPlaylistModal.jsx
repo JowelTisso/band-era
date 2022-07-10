@@ -24,6 +24,7 @@ const AddToPlaylistModal = ({ toggleModal, selectedVideo }) => {
       );
       if (res?.status === 200 || res?.status === 201) {
         toggleAddMode();
+        clearPlaylistData();
       }
     } else {
       callToast("Fill in required details!", false);
@@ -41,6 +42,13 @@ const AddToPlaylistModal = ({ toggleModal, selectedVideo }) => {
 
   const toggleAddMode = () => {
     setIsAddMode((state) => !state);
+    clearPlaylistData();
+  };
+
+  const clearPlaylistData = () => {
+    setNewPlaylistInfo({
+      title: "",
+    });
   };
 
   return (

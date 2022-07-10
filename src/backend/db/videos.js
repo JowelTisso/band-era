@@ -424,6 +424,50 @@ const alternativeMetal = [
   },
 ];
 
+const country = [
+  {
+    _id: uuid(),
+    videoId: "r7qovpFAGrQ",
+    title: "Lil Nas X - Old Town Road",
+    artist: "Lil Nas X",
+    genre: "Country",
+    views: "294M",
+    created: "8 years ago",
+    date: "07/05/2011",
+    thumbnail:
+      "https://i.ytimg.com/vi/r7qovpFAGrQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLANHLtmIT1pMG8y9jk-IpuyxxRlJw",
+    description:
+      "Watch the official music video for So Far Away by Avenged Sevenfold from the album Nightmare.",
+  },
+  {
+    _id: uuid(),
+    videoId: "ZEWGyyLiqY4",
+    title: "Blake Shelton - God's Country",
+    artist: "Blake Shelton",
+    genre: "Country",
+    views: "174M",
+    created: "3 years ago",
+    date: "12/04/2019",
+    thumbnail:
+      "https://i.ytimg.com/vi/ZEWGyyLiqY4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBpJJhKXPW7YKVUoNCaZWdDVRuX8A",
+    description: "Blake Shelton - God's Country (Official Music Video)",
+  },
+  {
+    _id: uuid(),
+    videoId: "IZbN_nmxAGk",
+    title: "Brad Paisley - Whiskey Lullaby ft. Alison Krauss",
+    artist: "Brad Paisley",
+    genre: "Country",
+    views: "218M",
+    created: "12 years ago",
+    date: "31/03/2010",
+    thumbnail:
+      "https://i.ytimg.com/vi/IZbN_nmxAGk/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB1ihQhQzt6zmCwLmXR6AOnZodzvQ",
+    description:
+      "Brad Paisley's official music video for 'Whiskey Lullaby' (with Intro) featuring Alison Krauss. ",
+  },
+];
+
 export const videos = [
   ...punkRock,
   ...metal,
@@ -432,4 +476,5 @@ export const videos = [
   ...electronic,
   ...alternativeRock,
   ...alternativeMetal,
+  ...country,
 ];
