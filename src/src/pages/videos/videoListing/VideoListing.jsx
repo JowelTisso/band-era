@@ -19,6 +19,7 @@ import {
 import { useAuth } from "../../../context/provider/AuthProvider";
 import { combinedCategory } from "../../../db/sliderDB";
 import { IoSearch } from "react-icons/io5";
+import { debounce } from "../../../utils/debounce";
 
 const VideoListing = () => {
   const { videoState, videoDispatch } = useVideo();
@@ -48,10 +49,10 @@ const VideoListing = () => {
   };
 
   const searchVideo = (e) => {
-    if (e.key === "Enter") {
-      filterByTitle(e.target.value, videoState.videos, updateFilteredVideos);
-    }
+    filterByTitle(e.target.value, videoState.videos, updateFilteredVideos);
   };
+
+  const debouncedSearch = debounce(searchVideo, 500);
 
   const toggleCategoryMenu = () => {
     setIsCategoryMenuVisible((isVisible) => !isVisible);
@@ -100,6 +101,42 @@ const VideoListing = () => {
         <button className="flex-center search-icon" onClick={toggleSearch}>
           <IoSearch className="t3" />
         </button>
+        <div
+          className={`input-container search-container ${
+            isSearchVisible && "show-search"
+          }`}
+        >
+          <input
+            type="text"
+            className="input-simple"
+            placeholder="Search"
+            onChange={debouncedSearch}
+          />
+        </div>
+        <div
+          className={`menu-backdrop ${isSearchVisible && "show-backdrop"}`}
+          onClick={toggleSearch}
+        ></div>
+        <section className="user-action-section flex">
+          <button
+            className="btn-link btn-all-videos"
+            onClick={() => {
+              const res = sortLatestVideo(videoState.videos);
+              updateFilteredVideos(res);
+            }}
+          >
+            Latest
+          </button>
+          <button
+            className="btn-link btn-all-videos"
+            onClick={() => {
+              clearSelectedGenre(videoState, videoDispatch);
+              updateFilteredVideos(videoState.videos);
+            }}
+          >
+            All videos
+          </button>
+        </section>
       </div>
       <section className="content-container">
         <nav
